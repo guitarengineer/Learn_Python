@@ -1,0 +1,3607 @@
+- Maxim
+  - inbox
+    - JimT would like class D stereo EVKIT
+    - get shipping info for BrianT
+    - can I set up a FPGA wiki or help guide on the eda website or sharepoint?
+  - shortlist
+    - IP addresses sticky
+      - diskstation 10.37.200.193
+      - EOD box 11.5.2.48
+      - thinkpad 10.37.200.212
+        - login AUS-LT-BDONOGHU\Brian
+      - EOD login server 11.5.4.1
+  - work in progress
+    - AX61
+      - IOR follow up items - due wed 12/21
+        - action items
+          - ISPK DNL INL and accuracy
+            - use eddies RMS sine method
+          - ALC scope shot TOC with default attack and release
+            - scope in B&W mode suggested, sounds stupid
+          - redo DAC HP filters, AP must have DC blocker enabled - DONE
+          - redo VSPK error calculation for relative to level, not full scale
+          - SDOUT clocking modes
+          - I2C bits
+          - hardware mode
+        - info
+          - VBAT VBST FFTs should only go to LRCLK/6 (i.e. 8kHz mode -> 1333Hz cutoff)
+          - show 84dB VSPK DNR setup to Bob
+          - edit eval doc on sharepoint to cover DONE and to do
+      - FOR
+        - get list of items
+        - target date Feb 3
+      - AX61 vectors #aa 
+    - AX65/66
+      - SLIMbus emulation
+      - learn about xtensa programming #aa
+    - P6 daughter boards
+      - spec sheet on maxim drive
+      - to do
+        - find MCLK oscillator
+        - route HDMI
+        - route to FMC, guess as best layout solution. give ed pins to try.
+        - are we sure the EVKIT software or software team does not need SPI mode?
+    - AX54
+      - revB corr and eval plan
+      - parts january
+      - auto-reset circuit in FPGA #aa
+    - AX67
+    - innovation
+      - digital guitar interconnect
+      - digital headset
+    - labview
+      - labview arduino
+      - SVN
+        - labview 2011 repositories
+        - set up a cron job to auto checkout a full SVN copy to my linux drive #aa
+      - labview 2011 install
+      - user.lib is a mess
+        - DMM FGV should be eliminated in favor of a better OOP methodology
+        - some stuff should go away, such as conditions server
+    - tools
+      - build simple non-event based state machines for quick development
+        - string based
+        - anytime something has more than two steps, use this
+        - put state machine inside a for loop for looping
+        - do internal looping via case-by-case decision making
+      - I2C Register Map
+        - I2C GUI: adjustable clock speeds
+        - implement saving/loading all presets from folder of text files #aa
+        - add option to exclude certain registers from presets, maybe add checkboxes somewhere
+      - Test Vector Tool
+        - Parse routine. Replace read text file with read binary file with manual parsing of EOL (/n) #aa
+        - improve viewing of large patterns #aa
+        - any way to automate the IDDQ stops? #aa
+      - OOPlugin #aa
+        - how to prevent name collision - command registry?
+        - tab completion of commands
+        - how to prevent use of reserved characters
+        - save .log file
+        - rename architecture class
+        - architecture enqueue to GUI loop directly
+        - can $variables be used to reference ANY type of data?
+        - can $variables be used to pass data between VIs?
+        - setup command line return using $RETURN
+        - initialization script
+        - RunVI plugin
+        - load front panel and wait
+        - plugin template
+        - error handling
+          - error display method
+            - pause and prompt
+            - kill all commands and report
+            - display errors but do not pause
+        - script builder
+          - input excel, output script
+        - plugins to build
+          - PowerSupply
+          - DMM
+          - AP
+          - Switch
+          - I2C
+          - Data Logger
+        - test scripts
+          - load a bunch of regular VIs and run
+          - write and read some I2C
+            - when reading show on status display
+          - use script to load other scripts
+        - first OOPlugin script: write registers then run sweep
+    - FPGA
+      - build a makefile
+      - tcl command reference for synplify and ISE #aa
+        - start using the command line built into the GUI
+      - xilinx online training for ASICs #aa
+      - sign up for solv net #aa
+        - find online training
+      - FPGA readme file for builds of AX54 and almscliff
+      - create a standard cells FPGA file for FPGA friendly standard cells
+        - file std_cells_fpga.v created in home folder
+      - practice running simulations
+      - makefiles and build scripts #aa
+        - review log files from ISE and synplify. extract commands to create scripts.
+      - PDM generator spec sheet #aa
+        - spec list
+          - what is done and what is to be done
+          - post on sharepoint with bit files and readme file
+      - generate signal path with only support modules and I2C
+        - support module tasks should be mine
+      - design flow
+        - scripts
+        - simulation
+        - list of tools
+          - ISE
+          - synplify
+          - ncsim
+          - dc
+          - experimental
+            - myHDL
+            - boldport (GNUmake)
+        - example flows
+      - review shalini's AX61 FPGA flow and code modifications #aa
+    - lab
+      - SSD upgrades
+        - install list
+          - windows
+          - office
+          - labview
+          - NI device drivers
+          - tortoise
+          - digital waveform editor
+          - nitite
+          - exceed
+          - TD Scan
+          - vim
+          - 1password
+          - ISE
+          - cmod driver
+        - configuration
+          - labview libraries
+          - outlook
+          - windows updates
+        - backup
+          - outlook pst
+          - TSSI license
+      - char lab sharepoint
+        - SVN server how-to #aa
+        - I2C Reg Map how-to
+          - where to download
+          - how to operate
+        - Test Vector readme #aa
+        - FPGA info
+        - how to set up the AP to play music
+          - include AP file
+    - information
+      - migrate reference data out of workflowy (dropbox, maxim drive, or SVN)
+  - daily notes
+    - W26
+      - friday
+        - pre planning
+          - send out weekly executive update
+          - vacation coding #aa
+            - OOPlugin demo
+            - I2C regmap
+              - implement new register setting format per james
+              - move to using /Presets folder insead of .i2c
+      - thursday
+        - pre planning
+          - review Artis's OY73 regmap #aa
+          - AX61 EC table TYPs #aa 
+          - AX61 Scan #aa
+          - continue dialog on register map formats with James and Wei #aa
+      - wednesday
+        - morning shortlist
+          - AX61
+            - redo linearity plots with less resolution at low input
+          - install CMOD drivers laptop
+            - verify with EVKIT
+          - AX61 EC table TYPs
+          - look at Artis's regmap
+          - send lab status update email
+          - email signature
+          - SVN howto #aa 
+        - EC table meeting
+          - wanted to show Robert polleros accuracy/linearity plots - but he's not here
+      - tuesday
+        - pre planning
+          - AX61 IOR items
+          - Mike's status items
+          - SVN how to
+        - AX61 status meeting
+          - reviewing pass 1 analog bug list
+            - these must be revised in pass 2
+            - JIRA 736 - device latchup
+            - JIRA 740
+            - THD affected by class D/G transistion
+            - JIRA 733
+            - JIRA 747
+            - bad efficiency with 4 ohm load
+            - OTP bug, cannot use BCLK normally and also be in OTP preview mode
+          - Evan trying to wrap up IOR items today
+            - did a lot of boost characterication
+            - boost is more stable with added cap
+            - running into thermal limiting
+          - ZCD bug
+            - 5ms timeout only with certain conditions
+            - with ramp enabled timeout is 50ms
+          - ISPK VSPK accuracy
+            - is DC offset causing large linearity errors?
+            - sean will ask robert polleros about it
+          - sean almost done with IOR
+            - still needs class D only mode 
+              - standard sweeps: power, THD, different loads, PSRR, efficiency,etc...
+          - EC table
+            - fill in TYPs
+            - Evan and Sean done everything through the boost
+            - stopped at ALC section
+          - Rafael
+            - most class D/G stuff done
+            - short circuit test - need bench verification from Eddie
+            - boost tests almost done
+            - I/V stuff
+              - VSPK working
+              - ISPK more difficult - can't force 3A
+            - DAI timing - to do
+            - I2C timing - to do
+            - will be ready for correlation after break
+            - DAI not working
+              - 24 BCLK per LRCLK
+              - outputs switching but no signal
+              - gain = 24dB
+              - SDIN held high or low
+      - monday
+        - shortlist
+          - finish AX61 action items
+          - mount cable racks
+          - Slimbus
+          - AX66 script learning
+          - AX66 FPGA flow
+            - xtclsh
+            - makefile
+    - FY2012
+      - W25
+        - friday
+          - finish AX61 measurements - submit report
+          - SVN access howto
+            - post on sharepoint and send to meeting attendees
+          - OOP meeting with charles
+          - AX66 FPGA flow
+          - SSD upgrade plan
+            - find all disks
+            - what to backup, if any?
+          - Labview time
+            - regmap
+            - OOPlugin
+            - user lib
+            - templates
+            - READMEs inside SVN #aa 
+          - Order 1 wire samples
+            - http://datasheets.maxim-ic.com/en/ds/DS18B20.pdf
+          - check in rom_checkouts to ICmanage (any maybe ACE files)
+        - thursday
+          - pre planning
+            - 11am collaboration meeting
+            - AX61 knock out the IOR!
+          - lab automation meeting
+            - france
+              - christophe 6 months ago
+              - sophia HHP group
+              - across group lab automation
+              - beniot 2 months at maxim
+                - use labview and teststand
+            - chris osian from SV
+              - HHP group
+              - just started using labview, but do have automated setup from visual basic
+              - supports more the prototyping side of things rather than the production side of things
+              - would like to access labview libraries
+              - also interested in motheboard/daughterboard
+            - christophe talking points
+              - christope has proposed an automated setup to HHP execs
+              - for sophia everything is new
+              - software costs are significantly negotiable
+              - there is one digital designer who is doing something with labview
+              - wants to make a breakout motherboard
+              - HHP execs want a demo within 6 months
+            - test guy Brent
+              - in dallas under rob gorges
+              - small group to support test engineers
+              - develops internal tools
+              - simulation of test code
+              - linking simulation to test
+              - build testbenches in design environment to benefit test
+              - main interest:
+                - handoff of simulation test steps to test and labview
+                - focused on going thru bus interface to set up device for specific measurement, such as trim
+                  - specialized sequence of events
+            - charles
+              - teststand
+                - cost is high
+                - performance is crappy
+            - Action items
+              - give access to SVN server
+                - make how to file - post on sharepoint
+              - brent - get info on simulation bridge
+              - benoit - teststand demo
+              - motherboard - HHP will work on a HHP specific board
+              - labview version control
+              - setup I2C GUI demo
+              - help define lab flow
+            - is EDA looking into managing licenses?
+              - there are cost differences
+              - for now, keep licenses seperate
+            - 
+        - wednesday
+          - AX67 builds
+          - AX61 IOR finishing items
+          - AX66 slimbus
+        - tuesday
+          - AX67 builds
+          - AX66
+            - slimbus #aa
+              - make file
+              - what support modules are needed 
+              - what pins need to come out
+              - status of interface box/software
+            - fpga directory setup
+              - READMEs
+              - scripts 
+        - monday
+          - shortlist
+            - AX67 builds
+            - P6 board design with Ed
+              - how to check out into altium?
+            - AX61 IOR action items
+            - Rich B help with cmod
+            - SLIMbus is here
+      - W24
+        - friday
+          - AX67 builds
+          - linux learning
+            - scripting TCL with ISE #aa 
+            - how to build from the command line without the ISE GUI
+            - makefiles #aa
+            - .my_cshrc and aliases
+          - lab organizing
+          - innovation
+            - digital headset and digital guitar really a new digital interface for audio + data
+          - AX61 action items
+          - AX65/66 emminent
+          - EOD transparent background?
+        - thursday
+          - IOR meeting
+            - get data looking nice, review with patrick
+          - AX67
+            - ROM 0xA bulid
+            - get on EOD
+            - still need FPGA setup
+          - setup extra lab dell
+          - populate and browse AX65/66 workspace
+          - afternoon shortlist
+            - jitter sweeps
+            - ISPK characterization
+            - AX67 builds
+        - wednesday
+          - 11.5.4.1
+          - unix login
+        - tuesday
+          - pre planning
+            - add more stuff to AX61 eval report
+              - jitter tests
+              - DAI clocking modes and I2C verification
+              - VSPK/ISPK
+                - lNL DNL
+                - accuracy
+        - monday
+          - pre planning
+            - AX61 eval items 
+              - VSPK ISPK
+                - INL DNL
+                - accuracy
+              - live IRQB (patrick should have)
+              - ALC scope shots (patrick should have)
+              - hardware mode
+              - VSPK/ISPK with BCLKEN=0 - does this make sense?
+              - jitter
+              - DAI clocking modes
+            - lab setup
+              - cable racks
+              - component cabinets
+              - metcals
+              - network jacks
+            - exceed working?
+            - ping AX65/66 team on SLIMbus status
+            - P6 daugherboard need to be revived
+            - ping phil on AX67 status
+            - get fixed IP for diskstation
+            - labview 2011 install and SVN
+            - Cube organizing - cable ties
+            - get kneeling chair from car
+          - AX61 debug
+            - WCI 'bug'
+              - proper operation is WCI=0 and waveform invert checked in AP (for L+R or (L+R)/2)
+              - or WCI=1 and waveform invert unchecked
+            - dumb analog mode
+              - POR then write BCLKEN=0 and SHDN=1, SPKEN=1
+              - ALC and PGA working as expected
+            - analog plus ADC
+              - POR then write an ADC, BCLKEN=1, SPKEN=1, SHDN=1
+              - ALC and PGA work as expected
+            - 
+      - W23
+        - friday
+          - AX61 IOR meeting
+            - parts will sample monday
+            - listening test - kevin
+              - short leads on supply
+              - 10uF on VBAT, VBST - part would blow up
+              - with more capacitance - part would not blow up
+              - part can get stuck in a muting state
+                - caused by under voltage lockout
+              - thermal shutdown only caused by driving really hard
+              - spike on VBST can kill the device when there is a large current and it goes into shutdown
+            - sean evaluation report
+              - some weirdness on FFTs
+              - combined efficiency around 80% with D/G
+          - lab setup
+          - AX48 patterns?
+        - thursday
+          - afternoon shortlist
+            - setup lab bench
+            - AX48 pattern meeting
+            - how to re-connect checked out code to new SVN address?
+            - setup voicemail
+          - AX48 status meeting
+            - pattern issues
+              - TDM mode
+                - odd outputs, some tri-state outputs
+                - pattern is not putting it in TDM mode
+                - 32 BCLKs for entire pattern
+        - tuesday
+          - morning shortlist
+            - license plate
+            - scan courtney thing
+            - talk to phil about builds
+            - Rafael email thread clusterfuck
+            - get boxes and labels
+          - pre planning
+            - how to do VSPK ISPK INL DNL?
+            - make sure patrick calculates INL DNL for VBAT VBST
+            - DAI clocking mode scope shots
+            - Sign up for fedex acct 
+          - AX61 status meeting
+            - agenda
+              - IOR requirements
+                - setting certain OTP bits can improve efficiency and possibly driving 4 ohms
+                  - reg 0xEF, 2 bits, drive strength set high
+                - big concern is efficiency and classD/G operation
+                - send list of tests we will not get to to Sean
+                - verify 1/3 LRCLK
+              - customer EVKITs
+              - bugs
+        - monday
+          - AX48 patterns?
+          - AX61 eval
+          - review packing situation, inspect boxes
+        - sunday
+          - OOPlugin status
+            - implement '//' for comments
+              - still pass comments to status display - replace '//' with echo?
+            - add 'original command' to command cluster - again for status display logging
+            - implement log file
+            - remove 'plugin type' and 'loop to execute' from command info
+            - start building controlPop
+              - send strings to controls
+              - retrieve strings from indicators
+            - run plugin
+              - implement show and hide front panel in pre method
+              - implement leave front panel open in post method
+              - create reference to top level.vi and save in object
+      - W22
+        - monday
+          - bring monitors home
+          - AX61 evaluation - fill up the eval report
+          - AX67
+            - review 66MHz timing results - does it work?
+            - talk to phil about the project status
+            - need a README for svn checkout flow
+          - AX65/66
+            - P6 daughterboard
+            - SLIMbus verification 
+            - setup ICmanage (2 workspaces), build fpga directory tree
+        - tuesday
+          - AX48 MBIST meeting
+            - low supply failures fail RAM - test will send some more units
+            - some xtensa boot failures may also be coming
+          - AX61 status meeting
+            - issues
+              - sean
+                - 4ohm load, lots of current, heating part
+                - THERM goes high
+                - boost issue only
+              - rafael
+                - send register settings for VBAT VBST readback thru SDOUT
+                - both I2S and JL mode
+                - scope shots and register dump
+              - add to JIRA
+                - detailed description of digital out muting situation 
+              - dynamic range on VSPK ISPK  
+              - VSPK ISPK FFT - lower fundamental for lower sampling rate
+              - patrick: look at inversion on VSPK - is it real? 
+              - patrick: check actual ALC times vs spec  
+              - IOR scheduled for DEC 2
+              - shalini wants to check ALC with fluxuating battery voltage
+        - weekly pre planning
+          - short week
+          - setup AX65/66 ICmanage workspaces
+            - start building FPGA environment
+            - make area for slimbus verification
+      - W21
+        - friday
+          - AX61
+            - why does the output go into protection mode at high currents. 
+            - how to do INL DNL of VSPK, ISPK?
+            - how to do phase response of VSPK, ISPK? phase is relative to what?
+            - document full scale and zero scale for ISPK VSPK
+        - thursday
+          - AX61
+            - ATB check for test
+            - OTP read back
+            - filter responses
+            - ALC plots
+            - why does the output collapse in D/G mode
+            - when does the boost collapse
+          - AX67 ROM builds
+        - wednesday
+          - ALC plots
+          - Dynamic range
+          - Frequency response
+          - Thd vs power
+          - Shdn current
+          - Ispk loopback
+        - tuesday
+          - post lunch shortlist
+            - complete P5 build, is there a quick way to verify, notify users about dip switch 4
+            - build AX61 boards, send one to ruth
+          - pre planning
+            - FPGA makefile
+            - last AX48 diagnostic patterns (hopefully)
+            - P5 build with 66-70MHz clock
+        - monday
+          - pre planning
+            - AX48 scan diagnosis patterns
+            - AX67 P5 speed increase
+            - AX54 EVKIT test and fix + new filters
+            - AX61 prep
+              - bench hardware
+              - reg settings
+              - any VI's needed? 
+                - write I2C and sweep
+              - ADC testing methods
+            - P6 schematics
+            - AX65/66 schedule
+      - W20
+        - weekly pre planning
+          - P6 shematic
+          - I2C reg map build, upload and email users
+          - AX54 get evkits, evaluate FPGA reset
+          - digital headset
+            - set up model sim
+            - build FPGA top and UCF
+            - get AX54 code into reusable verilog block
+            - draw up schematics
+          - AX48 patterns
+        - thursday
+          - AX61 meeting
+            - sean will compile evaluation report
+            - send daily emails with data
+            - big compiles on the 18th, 23rd, 30th
+          - priority list
+            - AX61 evaluation plan review
+            - AX48 patterns
+            - P6 schematic
+            - AX67 increase P5 constraints to 100MHz
+            - AX54 listen and evaluate FPGA
+          - pre planning
+            - stop at ATM on way home
+            - bob wants to get digital headset thing going
+            - AX61 meetings
+              - review eval plan
+        - wednesday
+          - pre planning
+            - AX61 zero trim routine
+            - AX61 evaluation plan review
+              - how to measure ADCs
+            - AX48 MBIST
+        - tuesday
+          - pre planning
+            - P6 schematic
+            - AX61 review the tests
+              - is there anything that can be coded to prep?
+            - innovation quest
+              - patrick working on muting circuit
+              - need to set up FPGA environment
+            - why did the time backup fail?
+          - AX61 meeting
+            - parts to arrive early - 200 diced
+            - more diced units later in the week
+            - test to provide zero trimmed samples in 4 days
+            - test to provide fully trimmed in another 4 days
+            - ADC features
+              - everything on datasheet - EC table guarantees
+              - dynamic range of I/V sense - expected 80dB
+              - class D/G THD at 6k and 1k
+            - put thought into INL DNL measurement technique
+            - ADC accuracy
+            - 48kHz is the most important operating mode
+            - jitter
+              - high min and max jitter can cause problems
+              - no digital PLL, so only jitter problems will be on analog specs
+            - trim procedure document
+        - monday
+          - patrick working on mic muting circuit
+      - W19
+        - friday
+          - pre planning
+            - AX48 patterns
+            - P6 sch
+            - I2C reg map email
+            - post reg map readme on sharepoint
+            - innovation quest with Bob
+        - thursday
+          - I2C reg map updates
+            - fix register settings binary naming issue
+            - import old INI files to SVN
+              - make SVN available over HTTP so users can direct download
+            - add file path field for register setting file?
+              - change from binary to better INI
+            - fix file import export
+              - only excel and text
+              - show template
+            - quick edit on presets front panel
+              - show reg names?
+          - pre planning
+            - build AX67 regmap and close JIRA
+            - copy INI files to SVN
+            - I2C reg map - updates and distribution plan
+            - P6 sch
+            - waiting for AX67 ROMS
+            - create labview2011 SVN repo
+        - wednesday
+          - stream
+            - info that should be remembered
+              - labview license
+              - AX67 save bit and ace files for every build
+              - P5 ACE file DIP switch setup, including phil's audio settings
+          - pre lunch shortlist
+            - AX61 arrives around nov 21, what to do
+              - are boards ordered?
+            - complete P5 builds
+              - check in svn rom flow, show to phil
+            - clean up email inbox
+            - build AX54 FPGA file with new filters, or wait for reset fix
+          - pre planning
+            - AX67 I2C map
+            - AX67 file location review, how to check in dat files?
+            - AX54 FPGA fix plan
+            - I2C reg map distribution to apps team
+        - tuesday
+          - pre planning
+            - AX54 FPGA build
+            - P6 schematic
+            - bob's analog headphone thing
+            - OOPlugin command structure and parsing
+        - monday
+          - afternoon shortlist
+            - AX54 FPGA build
+          - pre planning
+            - send in health screening paperwork - moday is the last day
+            - get all AX48 patterns from BrianT onto maxim drive
+            - AX54 
+              - fix coeff file per shalini's instructions and re-run
+              - try XMOS to see if reset problem is real
+              - get soldered evkits from SV
+              - generate new EVKIT programming file and deliver to apps
+            - AX67
+              - write README for rom builds
+              - script ROM builds from SVN update to ACE file?
+              - can generated files be seperated from source files?
+            - P6 audio board 
+              - update spec
+              - work on schematic
+            - OOPlugin
+              - work towards useful demo
+            - Digital headset
+              - does Bob have a source code repo?
+      - W18
+        - friday
+          - work with shalini to fix modulator coefficients
+          - build AX67 reg map
+          - watch for AX67 ROM drop
+          - Bob's digital headset meeting
+          - leave early
+        - tuesday
+          - pre planning
+            - P6 schematic
+            - build AX67 I2C GUI
+        - monday
+          - pre planning
+            - introduce to the I2C register map
+              - Nitin, Sean McCommons, Evan Ragsdale
+            - john artis this week?
+            - debug AX54 FPGA build
+            - P6 schematic and spec
+            - new AX67 ROM builds?
+          - notes
+        - Thursday night
+          - OOPlugin next steps
+            - Command line
+              - Command registry
+              - Restricted characters
+              - Reserved names
+              - Assigment operator '='
+              - Variables $
+              - Nested commands
+            - VI plugin
+            - Plugin template
+            - Root class helper VIs
+              - Send command to architecture
+            - Manual pages
+            - Tab completion
+      - W17
+        - friday
+          - pre planning
+            - AX54
+              - sync workspaces
+              - check for FPGA files in right place
+              - check with shalini on files to edit
+              - run FPGA build
+              - check 48KHz frequency response - should be 0.4dB less peaking
+              - latchup setup for matt - toggle SHDN with full load.
+            - OY64
+              - assist as needed with Mar's setup
+            - AX67
+              - it's P6 build time!
+          - notes
+            - created altium SVN repository svn://ausodsa001/altium
+            - migrated all labview data to diskstation repository svn://ausodsa001/labview2010/
+        - thurday 
+          - notes
+            - matt wants AX54 lab setup for latchup test - OK to mount part on FPGA board
+          - pre planning
+            - send AX26 samples back to Royston
+            - AX54
+              - get icmanage repository striaght
+              - build for EVKIT, test with AX54 in lab
+            - P6 board
+              - add HDMI
+              - route to FMC
+            - AX67
+              - play with flow
+              - SVN checkout of ROM files
+            - AX61
+              - review sean's evaluation spreadsheet
+              - what labview code is needed?
+        - wednesday
+        - tuesday
+          - notes
+            - AX61 meeting
+              - send I2C register map software
+              - they know a little about what the fuck miles was doing
+              - socket status
+              - daughterboard statuses
+              - apple cares about low noise, so FFTs are important - per kym
+              - FFTs for all sample rates
+              - Miles's script regulates power supply droop programiatically
+              - ALC TOCs
+                - fast and slow attack and release
+                - showing infinite hold
+              - IOR FOR
+                - what data is for what report
+                - deadlines?
+              - inductor current spec 5.9A for 4ohm load
+                - SV will try inductors with different current specs, just to see where it dies
+              - ADC testing
+                - who knows, just try to get the signal paths working
+              - trim?
+                - talk to test, design
+              - get feedback from design on jitter
+            - it would be cool if two AX61 boards could mate to do shared 1/3 LRCLK mode
+          - pre planning
+            - generate new AX54 workspace
+            - submit AX54 FPGA stuff to ICmanage
+            - run AX54 FPGA synthesis
+            - P6 daugherboard schematic
+            - P6 flow review
+              - straighten out impact projects
+        - monday
+          - morning shortlist
+            - prep for P6 build
+            - work on P6 board schematic
+            - set up AX61 meeting
+            - credit card statement
+            - SVN checkout flow for ROM images
+          - afternoon notes
+            - Bob's jack detect emulation
+              - mic preamp with pulse muting sample and hold
+              - pulse width jack detect circuit
+              - both need custom FPGA daughter cards, could put both on same PCB
+            - Matt Felder still searching for 20kHz PSRR bug
+            - AX61 schematic approved
+            - first ACE file delivered, need to refine flow
+              - .dat file naming conventions
+              - svn checkout of ROM images
+              - does it make sense to use symbolic links
+              - icmp4 submit ./...
+      - W16
+        - friday
+          - pre planning
+            - create short written spec for P6 audio interface (2 x AX48)
+            - begin P6 audio interface schematic
+            - try P6 build - synthesis is complete, ACE file generated
+          - mid morning shortlist
+            - build pin matrix for FPGA -> samtec -> audio board
+          - stream
+            - AX61 socket drawing on the way
+            - started P6 audio board spec
+        - thursday
+          - mar needs fix for number of digits logged from 3458cd 
+        - wednesday
+          - AX61  sockets: PR No: 	 201117761
+          - OOPlugin
+            - make enqueue VIs polymorphic to accept single enqueue or array of enquque elements
+            - should there be some kind of command registry?
+            - add error handler VIs to queue
+          - AX67
+            - I think package is finalized
+              - test says LGA cannot support this package
+            - to build FPGA, just replace two rom files and do runsyn_austin
+            - software team will deliver ROM files each week
+            - this week: P5
+            - next week and on: P5 and P6
+            - work on unified flow: source to BIT/ACE
+            - software team prefers ACE file
+            - current build should setup P5 with integrated codec ready to go with analog audio in and out, can test without any I2C
+        - tuesday
+          - pre planning
+            - AX61 evaluation meeing
+              - missing from eval document
+                - ALC tests
+                  - attack and release times
+                  - infinite hold in mute and non-mute
+                  - listening to ALC
+                - ADC paths
+                - DAI verification
+                - DAC path
+                  - filter verification
+                  - dynamic range
+                - registers
+                  - interrupts
+                  - live interrupt
+        - monday
+          - AX54 BCLK high test
+          - AX67
+            - try runsyn_austin
+            - first FPGA rom build to be delivered friday
+            - write P6 breakout board IOS
+      - W15
+        - thursday
+          - AX54
+          - AX67
+            - status meeting
+            - rom code ready nov 4
+            - software team wants to do weekly builds starting Oct 14
+              - platform 5 at first
+              - platform 5 and 6 last two weeks
+        - wednesday
+          - status
+            - shalini preparing for AX61 listening test disaster
+            - Royston cancelled my trip and screwed everything up
+            - AX54 GBD and PDM frequency response going on without me
+            - new office
+              - construction has not started yet
+              - they are buying all our benches
+            - the lab is a mess
+            - Mike will need assistance with duties while on vacation in Dec
+            - Miles is gone
+              - time to tear up the OOPlugin
+            - AX65/66 work needs to become 1st priority as soon as possible
+            - will I be supporting AX61 silicon?
+            - 
+        - Mon - Tue: vacation (mexico)
+      - W14
+        - wednesday
+          - morning shortlist
+            - FPGA eval meeting 3pm
+            - AX54 bit weights loose ends
+            - AX26 SCAN
+            - finish OY64 labview updates and ship back
+              - if time shorten file names
+          - AX61 FPGA meeting
+            - added mutliplier for PGA gain setting
+            - support modules checked into ICmanage
+            - DAC supporting module is modulator to I2S
+            - FPGA methodology - replace analog components with support modules
+            - still to check on bench LOBAT status bit
+              - is not hooked up in FPGA build, need new build
+            - check battery debouce time
+              - put in pulse for 5ms - ALC should not engage
+              - check for oscillations using ALC and toggling battery
+            - is big step coming out of mute?
+            - did we check every clocking mode
+            - check min and max vales for SYSCLK
+              - pin out and sweep with external clock
+            - for IRQB can we do N channel open drain output on FPGA?
+            - IRQB - there is a timing diagram in IOS for live move
+            - can daniel review VBAT VBST transfer function
+            - is the slope of VBAT VBST steep enough to meet 40dB spec?
+            - SDOUT hiz - both parts should be hiz for 1/2BCLK cycle
+            - scope shot of TDM with DOUT1X
+            - should we check hardware mode?
+              - need new FPGA build, good to check
+            - 
+        - tuesday
+          - pre planning
+            - book car for Dallas trip
+        - monday
+          - this week
+            - modify OY64 labview code
+            - complete AX61 FPGA emulation and report results
+            - AX65/AX66 pre planning
+            - AX54 loose ends
+            - OOPlugin
+              - what plugins will I need over the next few projects?
+                - AX65/AX66 FPGA
+                  - AudioPrecision
+                  - I2CRegMap
+                  - TekScope
+                  - HSDIO
+              - create BDTemplate
+          - end of day status
+            - Mar's laptop almost ready, just check to see if the SVN checkout was valid.
+            - get as much AX61 FPGA data as possible so Patrick can get on this setup
+              - TDM mode
+                - slot ordering
+              - SDOUT characterization
+                - hiz modes
+                - VBAT, VBST, ISPK, VSPK in correct locations
+                - DOUTCFG, ORDER, DOUTSEL bits
+                - AX54 PDM C code
+                - AX54 bit weights program
+                - AX26 SCAN check
+                  - at least half of the units, test and send to Roy
+      - W13
+        - sunday
+          - OOPlugin thoughts
+            - BDtemplate
+              - The plugin should handle setting the object instance variables.
+              - Instance variables are displayed to the user on the front panel
+              - instance variables and object are kept in sync using the states "Refresh UI" and "refresh object"
+              - The object should hold all state information about itself, so that the top level GUI can be launched and completely restored to a valid state using data in the object. 
+              - The plugin shares some functionality with the architecture:
+                - command parsing
+                - status display
+              - Instance variables can be set using:
+                - front panel controls
+                - command line (pluginname set somevariable=somedata)
+                - loaded from object saved in a file
+              - data transport
+                - still to be developed:
+                - sending data to an improved data logger
+                - sending data to another plugin/object
+                - grabbing data from excel (this may need to be imlpemented on the architecture scale to encompass mutliple plugins). It will likely be a script generator type plugin. Excel data -> script
+        - wednesday
+          - pre planning
+            - New password
+            - V6 breakout board plan
+            - Anything to check on AX54 correlation?
+            - How to implement the stream?
+            - Secretly start fooling with AX61 synthesis
+              - Review syopsys docs
+          - stream
+            - Mike wants to break into handheld power
+              - find out what products they have and get some EVKITs
+            - eRADAR for dallas submitted
+            - miles meeting
+              - two command parsing rules
+                - =
+                - ()
+              - & is a placeholder for the return value
+              - putting &someplugin will get return value from someplugin
+              - # directive
+                - to edit plugins
+              - path plugin
+                - can set a path
+                - used in the initalization script to load a script file
+              - kill command can kill plugins
+                - use full name from ProcessList
+              - ProcessList - need to be filtered
+                - contains all running things
+              - $ calls a variable
+            - AX54 DR 98dB
+        - tuesday
+          - AX49 patterns
+          - AX54 correlation units en route
+          - labview mods for Mar
+          - AX54 DIGTIMING pattern
+          - signed up for solvnet
+            - solvnet.synopsys.com
+        - monday vaction day chicago
+      - W12
+        - friday
+          - pre planning
+            - travel request for Dallas
+            - AX54 stuff with matt
+            - review JIRA
+            - assist shalini with P6 bring up
+          - AX54
+            - click pop was not using peak reading
+              - measuring SHDN -72dBV
+              - power up -64dBV (worst of several tries, on average around -67dBV)
+        - thursday
+          - pre planning
+            - I2C regmap builds for Sunny and Rafael
+            - AX54 auto-reset
+            - check on AX61 progress, when do we need to order sockets?
+            - AX61 FPGA debug
+            - AX54 JIRA items
+        - wednesday
+          - AX54 measurements with Matt
+        - tuesday
+          - pre planning
+            - morning FPGA seminar
+            - afternoon help Matt with AX54 stuff
+              - JIRA items and emailed items
+        - monday
+          - prep for FPGA seminar tomorrow
+          - AX54
+            - PDM bug right channel only in 128OSR
+            - EVKIT datasheet review
+            - JIRA action items (wideband jitter, etc...)
+      - W11
+        - friday
+          - pre planning
+            - I2C timing for bob and shalini still needed? no, but there is a new BIT file to try.
+            - AX54
+              - waiting for trimmed units. there were some emails with things to check from matt. might need a spin of the FPGA for 40kHz operation
+            - if AX54 is mostly patrick, what is my next project
+            - ship PDM boards to ryan willems
+            - call eric Z with labview info
+            - OOP notes
+              - Labview plugin scripting test sequencer
+              - 
+              - Create scripts from excel conditions sheet
+              - 
+              - Pop up interactive instrument panels
+              - 
+              - Run test sequences with many steps
+              - 
+              - Pass data plugin to data logger
+              - 
+              - User can ask plugin for command names
+              - 
+              - User can ask plugin for argument names
+              - 
+              - User can explore available plugins
+              - 
+              - User can create plugin from template
+              - 
+              - User can find example scripts
+              - 
+              - Regression test scripts for every command and plugin
+              - 
+              - Scripts can call scripts
+              - 
+              - Scripts can be interrupted with a button
+              - 
+              - Queues can be flushed with a button
+              - 
+              - Plugin can return a command
+              - 
+              - Plugin can print command template to the status display (with default values for arguments!)
+              - 
+              - Robust instrument plugins:
+              - Soft front panel
+              - Typedef front panel
+              - Can use individually or inside state machines
+              - 
+              - Plugins can update status display in real time
+              - 
+        - thursday
+          - pre planning
+            - return call Eric Zeigler. He wants labview training info.
+            - AX54 SCAN
+          - afternoon shortlist
+            - AX54
+              - scan at 10MHz
+              - where to stop IDDQ pattern. Current is measured by forcing 1.8V on OUTN. The IDDQ is differential, so should be very similar between stops
+            - AX61
+              - take timing scope shots of I2C from both command modules and passing and failing bit files.
+            - call Eric Zeigler
+            - send FPGA boards back to Ryan Willems
+            - OOP time
+        - wednesday
+          - pre planning
+            - AX54
+              - replicate XMOS bug. need to flash first.
+              - SCAN
+            - AX61
+              - shalini has found a race condition and it fixing it. she is documenting the synthesis flow
+            - OOP
+              - review JIRA
+              - enter new ideas
+              - write 'paper tiger' scripts
+              - implement script object and start writing test scripts
+        - tuesday
+          - 
+        - monday
+          - morning meetings
+            - project management methodology
+              - there will be a major change to a product management based design flow
+              - product definition will be much more refined. lots more research work before IOS
+              - no new features after IOS
+              - engineers can estimate their own time for allotted tasks
+            - AX65/66
+              - lab126 - customer. need 80-100MIPS
+              - there are team leaders for each group: design, test, product engineering (us), etc...
+      - W10
+        - friday
+          - pre planning
+            - AX61 TDM mode. There is a DAI document on sharepoint, testbench in ICmanage or from shalini. 8 slots 32 bits each 256x BCLK
+            - AX61 document L+R/2 bug
+            - check some other stuff on DAC path if applicible
+            - AX54 scan
+            - OOP plugins
+            - AX54 FPGA reset on MCLK change
+            - AX61 synthesis flow
+          - notes
+            - AX61
+              - 
+            - OOP
+              - names
+                - labview shell
+                - what does it do?
+                  - sequences code
+                  - manages plugins
+                  - manages data
+                  - runs scripts/tests/sequences
+                  - provides a fast command line interface
+                  - provides debugging tools
+                  - provides ready made plugins
+        - thursday
+          - morning shortlist
+            - AX54 scan
+            - AX61 synthesis flow
+            - BDTestbench
+              - command parsing
+              - show plugin name on front panel or in title bar
+          - AX61 debug
+            - I2C still broken on 2nd ML506 board
+          - AP rep visit
+            - try scripts and learn mode
+            - can save acquisition buffers to re-process FFT data later
+            - can analyze digital streams using built in macros (debug SPDIF)
+            - AP wants to know about future digital interfaces #aa
+            - has loaner available
+        - wednesday
+          - morning shortlist
+            - AX54 scan patterns
+            - Can I do anything with the crappy -13dB ADC file?
+            - talk to shalini about the build flow
+            - OOP
+              - state machine features
+                - command line
+              - brainstorm DMM, I2C, test executive, large scripts
+        - tuesday
+          - post lunch shortlist
+            - xtensa boot
+            - waiting on bit file, is there any thing I can do do debug I2C or evaluate partial ADC path?
+            - OOP
+              - BDTestbench has QDMH dependencies
+              - runVI brainstorming
+              - data moving around brainstorming
+              - return values and the status display
+              - default case in test executive loop checks out test executive
+              - JIRA
+        - monday
+          - morning shortlist
+            - AX61
+              - resolve I2C issues. make sure shalini removes all delays.
+              - waiting on ADC path
+            - AX54
+              - see notes from matt
+      - W9
+        - friday
+          - project load
+            - AX61
+              - FPGA
+              - order sockets as soon as MECN
+            - AX54
+              - ping TE on correlation
+              - ping MattF on eval stuff
+                - matt meeting
+                  - first things to check
+                    - DAC output test mode, look for LRCLK tones
+                    - shutdown supply current, up to 6V
+                  - FPGA
+                    - could implement cycle skipping jitter
+                  - wideband jitter setup at some point
+                  - test will have full trim program within a few days
+                  - really no reason to support every clocking mode under the sun for the generic PDM generator (unless the XMOS is unruly as far as sample rate output)
+            - AX48
+              - automated tests of all modes
+                - scope shots
+                - THD+N
+                - pass fail limits or sweep regions
+                - replicate testbenches, then look for missing test cases
+            - FPGA - what is the next FPGA project
+              - AX65/66
+                - basically a spin of AX48, dual die solution
+                - will need to build xtensa code and support software team
+                - first task will take existing AX48 build and drop in new extensa core
+                - should still fit on V5 V6 boards
+                - not critical to build the entire chip onto the FPGA at once
+                - would be nice to be able to program the xtensa
+                  - learn tool chain
+                  - do 'hello world'
+                  - program thru I2C tunnel or SPI (SPI will be faster)
+                    - can we do a FPGA like SPI flash programmer?
+                - IC manage tip: icmp4 add ./...
+                  - add all files in current directory and below
+          - miles meeting
+            - connect JIRA to subversion
+              - fisheye tool can link to a repository
+            - use JIRA to track issues asyncronously
+              - comment on individual items
+            - architecture changes
+              - ProcessList
+                - filters out dependencies
+                - to do: filter out VIs actually running
+                - command ProcessList <name>
+                  - returns filtered by <name>
+              - ShowFrontPanel
+                - front panel method name property
+                  - default top level.vi
+                  - could be any VI in plugin directory
+                - populates plugin object control
+                - attempts to update object in real time without keeping object checked out
+                - need way to push object updates to an open front panel
+              - RunAsync
+                - how to pass object back to architecture
+              - RunVI
+                - how do generic VIs pass error and data back to the architecture?
+              - add command to set front panel controls
+              - Look at how the variables work
+              - only environment variables affect command line calls
+              - there is also the command line executive class to add functionality later
+              - testbench object - overloads test executive
+                - exercises extra command
+        - thursday
+          - pre planning
+            - read through JIRA items
+            - do some OOP
+              - launch class
+                - runs any VI with VI server
+                - object contains reference
+                - hand off object to state machine and move on, allow state machine to check object back in when done
+        - wednesday
+          - Test vector tool updates
+            - get back to single vector file path
+            - clean up typedef look
+            - show status when fetching errors
+            - do not load errors checkbox
+              - make sure passing vectors still light up LED
+              - show status
+        - tuesday
+          - AX61
+            - waiting on ADC and DAC path
+            - get AX54 EVKIT running for PDM and I2S listening tests
+        - monday
+          - check attack release times vs spec
+          - debug ADC path
+          - listening test with ALC
+          - miles call
+            - add environment variable still in progress
+              - need to prevent the same environment variable twice
+      - W8
+        - monday
+          - priorities
+            - AX61 FPGA emulation
+              - devise emulation plan
+              - how long to work on this?
+              - generate my own report
+            - AX54
+              - DAC testmode output, look for LRCLK tones
+            - OOP
+              - work with miles to refine
+            - FPGA
+              - PDM spec sheet
+                - list supported I2S modes
+                - truth table for inputs
+          - to do
+            - setup AX61 FPGA
+            - brainstorm AX61 emulation
+            - bring up AX61 I2C map
+            - ask mike how long should I focus on AX61?
+          - miles meeting
+            - object check in check out system
+              - user event or queue
+            - names
+              - name the loops
+        - tuesday
+          - pre planning
+            - AX54
+              - post FPGA programming file on sharepoint
+              - LRCLK tone investigation
+                - EVKIT
+                - testmode
+            - AX61 emulation
+              - labview coding
+                - I2C class
+                - Excel Class
+                - ControlPop class
+              - start going through I2C map
+              - brainstorm AX61 report structure
+          - AX61
+            - I2C is sensitive to timing
+              - works better with older command module
+              - the I2C implementation for this and future products needs to be improved
+                - should work with all command modules
+            - write 5 bit output program in labview
+              - static 5 bit
+              - alternating between two different values at a specified rate (likely very slow for audio)
+            - debug
+              - 5 bit interface for threshold implemented
+              - attenuation is 9dB
+              - must set mute disable bit or attenuation will be mute
+            - verified all gain I2C settings
+          - 
+        - wednesday
+          - pre planning
+            - labview
+              - conditions server should be renamed ControlPop?
+            - AX61
+              - take more data
+                - dynamic range (when 20 bit is ready) 
+          - office discussion
+            - phones
+              - new numbers?
+              - new equipment?
+            - furniture
+              - new chairs and benches
+            - lab
+              - new cabinets and racks
+              - can we plan the layout?
+            - will collaboration area have a couch
+            - when will network be up?
+        - thursday
+          - pre planning
+            - AX61
+              - DAC path ALC measurements
+              - ADC path debug with shalini and daniel
+              - look at support modules code
+              - Here's something simple, but useful to check.  With the ALC active, and the battery voltage below the threshold, and the audio being muted by the ALC .... Could you disable the ALC via the I2C and see if any clicks or pops are created?  Not sure if ALC or VOL should control the ramp.  But definitely no clicks or pops. -Tim S.
+            - check in AX64 to ICmanage
+            - OOP
+              - review miles's updates
+              - is there a way to template a child class?
+        - friday
+          - pre planning
+            - AX61
+              - RTL fixes
+                - DAC path to 20 bits
+                - ADC path functional
+                - bring out 1bit DAC path for mute debug
+              - check attack / release times
+            - labview
+              - OOP
+              - SVN
+            - AX54?
+          - miles meeting
+            - testbench for check in /check out system
+            - variable replace text in command string
+            - error handling by 'default' object
+            - do not combine plugin manager and variable manager
+            - can we implement a process registry
+            - waiting on JIRA
+            - update variable manager
+              - address variables with ~
+                - replace variable name with varible value in command sent to object
+              - implement checkout system
+              - environment variables
+                - only for shortcut commands
+                - 2D array with shorthand values
+                - need another special character for environment variables
+                - dynamic loading at runtime
+              - remove data in/out terminals
+            - testbenches
+            - test classes
+            - real classes
+            - root class methods
+            - update default test exec shift reg to only be for architecture error handler, then move actual default test exec to plugin manager
+            - rename it from 'thearchitexture'
+            - update RunSequence command, at the moment does not have an input. Should come from command or front panel.
+            - SetDefaultTestExec to change to use plugin manager
+            - entire showfrontpanel thing ***BIG***
+              - could involve broadcasting of data
+            - process wrangler: get referernces to all running VIs. bring up front panel, abort, set controls, etc............................. ***BIG***
+            - remove Variable command
+            - kill SequenceExec
+            - kill SetDefaultSequenceExec
+            - update RunAsync command
+              - programmatic setting of front panel controls
+              - keep brackets for [controlname, controltype] - make a control set
+            - sequence loop needs ability to send error to test executive
+            - 3 button error handling: stop, continue, pause
+      - W7
+        - monday
+          - pre planning
+            - AX64
+              - double check the GND MUX U4 pinout. is it really wrong? fix glue logic if needed
+              - jdet is now starting to work
+              - does ADC gain need to be adjusted?
+              - map the remaining resistor registers in chipscope
+              - attach resistors and record measurements
+              - try going through testcases in Patrick' s excel sheet
+            - AX54
+              - look at evan's zero trim code
+            - look over miles's architecture and setup meeting
+        - tuesday
+          - pre planning
+            - is the ADC data in correct format?
+              - ADC puts out offset binary in bipolar mode, centered around Vref/gain (vref = 1.25V)
+              - does jdet_top expect two's complement? I believe yes.
+              - what is voltage at ADC input? less than 100mV
+              - try going back to the paul crocker way of inputting ADC data
+                - MSB = 0. positive inputs only
+          - AX54 is here
+        - wednesday/thursday
+          - AX54
+            - labview
+              - daughercard I2C control
+              - automate AP sweeps
+            - solder a device
+            - EVKIT bring up
+              - map MCLK SEL
+              - install XMOS
+              - programming instructions to Ruth
+          - AX64
+            - review results and tim's comments
+            - what is needed to finish this thing?
+          - labview
+            - OOP framework
+            - SVN migration and architecture
+        - friday
+          - pre planning
+            - AX54
+              - program XMOS
+              - play USB audio
+              - solder device
+              - Matt's list
+                - look at DAC outputs in testmode
+              - instructions and files to Ruth for programming
+            - AX64
+              - icmanage permissions issue
+            - labview
+              - OOP goodness
+                - mile's architecture
+                - pure OOP experiment
+                - top down design of how a OOP sequencer would work
+                  - list of available plugins
+                  - current sequence
+                  - load and save sequences (a sequence is an array of objects)
+                  - figure out how to interact with object front panels and data
+              - SVN migration
+                - setup synology with trunk/branches/tags architecture
+                  - include readme file in root
+                  - instructions on how to setup and access the SVN should be on the interwebs somewhere (char lab sharepoint)
+            - lab
+              - bookmarks page
+          - miles meeting
+            - OOP architecture
+              - sequence array
+              - command line
+                - command history
+                - variables
+                - command line math
+                - indexing of varible arrays
+                - idea is arbitrary math
+              - test executive class is like a 'main' function
+                - test executive will serve as a front panel
+                  - GUI is a good start, but this is behind the scenes
+              - FGV to hold plugin array
+                - parsed from directory
+              - varible executive to hold varibles
+              - FGVs
+                - queue
+                - varaibles
+                - plugins
+        - saturday
+          - Miles's OOP architecture
+            - 3 loop structure
+            - top loop: user interface
+            - middle loop: 'test executive'
+              - name is too fancy
+              - just sequences plugins
+              - also has placeholder methods for error handling, pause, resume, etc. (trying to control the sequence execution, but I think this might be better done in the bottom loop)
+            - bottom loop: consumer loop
+              - executes plugins
+        - sunday
+          - feedback for Miles
+            - how commands are parsed and where they go is confusing
+              - example: LoadPlugin command
+                - there are two case structures with the loadplugin command nested. One in loop2 and another inside the plugin executive. This kind of duplication should be eliminated.
+                - other commands that do this:
+                  - most plugin executive commands
+            - the single un-initalized shift register of one object should be removed from loops 2 and 3
+            - what is the difference between RunVI and RunAsync commands. looks like some duplication
+            - why doesn't everything have a run method? I'm seeing too much fragmentation. We need a better root class
+            - root class could have an 'execution loop' data member to indicate what loop it should be run in. Loops could be exactly the same with different instances (like making the loops objects). Then objects can be assigned to run in specific loops. For the most part this will be already set by the default value of the parent class.
+            - can the front panel template be simplified? We should have all that support code somewhere else. The object should be passed thru the terminals, invoking the plugin executive inside the front panel is a bad idea. It makes it really easy for someone to screw with the plugin executive.
+            - Is there a way to autogenerate a blank plugin child class from a template?
+            - When saving a plugin, the plugin should be able to send a return message to the status display
+              - in the root class add a 'return value' string, then send this to update status display VI
+      - W6
+        - monday
+          - pre planning
+            - AX64
+              - route more stuff to LEDs
+              - debug TB_jdet_top simulation
+            - set up tuesday meeting with miles
+        - tuesday
+          - wire up chipscope and go
+          - check mux connections
+          - should I see pulses at jack?
+          - add some more bits to chipscope
+          - excel decoder
+          - are status bits inverted?
+          - look up meanings of status bits in I2C map
+        - wednesday
+          - call tim for analog review
+          - meeting for AX54 trim
+          - mile's framework is getting some traction
+      - W5
+        - wednesday
+          - meeting and lunch with bruno
+            - come up with a mission for the lab group
+          - AX48 pattern debug
+            - MIST passes when EN is pulled to 1.8V
+              - with EN pulled to DVDD
+                - I2C is dead 1.0V-1.22V
+                - comes alive at 1.22 or at 1.2V with heat
+          - AX64 emulation
+          - test vector tool
+            - keep main graph bounds when toggling between actual and expected
+            - implement checkbox for do not fetch errors
+            - get rid of extra file path control to txt file
+          - things going on
+            - Labview
+              - miles has an OOP architecture. use some ideas from him to create something
+              - SVN migration to synology
+              - templates
+              - instrument OOP
+              - I2C GUI 2.0
+              - fast development
+              - library bloat
+            - version control
+              - SVN
+              - git
+              - ICmanage (perforce)
+            - FPGA
+              - what's next?
+              - what procedures can be refined?
+                - synthesise, map, and place scripts
+                - RTL library
+                - readme files
+            - lab
+              - bruno wants us to define a mission
+              - bruno wants us to be involved from the beginning 
+              - bruno wants us to subjectively eval parts
+        - thursday
+          - things to do
+            - AX54
+              - send sockets to evan
+              - socket board
+                - review layout
+                - get I2C info for muxes
+                - think about labview framework for bench test
+            - AX64
+              - run sim
+              - investigate clocking adjustments for serial interface
+              - try emulation
+              - check in files to ICmanage
+            - labview
+              - miles's OOP
+        - friday
+          - AX64
+            - ADC is alive
+            - hook up chipscope
+              - attach different headsets
+              - is there any data wiggling in the registers
+              - look at ADC data input register
+            - route internal pins to extras
+            - talk to tim about clocking
+          - talk with bob
+            - nutan might want to know about jdet lab eval on thursday
+            - common bus architecture is gaining traction
+              - FPGA emulation
+                - select IP from checkboxes and build
+              - figure out ways to integrate common bus into lab testing
+              - bob wants a small demo board to travel with
+          - afternoon
+            - AX64
+              - new clock divider
+                - 3MHz in (or greater)
+                - divide to generate acfi, acfd, clk, clkd, SPI clock
+              - find onboard clocks on ML506
+              - compile new design
+              - run TB
+      - W4
+        - monday
+          - thinkpad IP 11.5.2.27
+      - W3
+        - monday
+          - figure out how to write sequence of registers to set up MAX ADC
+            - paul can help me write a state machine
+          - implement ADC and DAC read/write modules
+            - change ADC counter to count to different values for RW
+          - are there any other challenges to this design?
+            - the hardware is untested
+        - tuesday
+          - pre planning
+            - implement ADC low level module and top level state machine
+            - build ADC testbench and evaluate
+            - get Paul's help on wiring the design
+        - wed
+          - generate clkd and adc go with counter
+          - clock adc state machine off of main clock with done bit enable
+          - temp EOD setup
+            - login to 11.5.2.46 with single sign on credentials
+              - then pick anything but 9 and 10
+      - W2
+        - tuesday
+          - AX64
+            - talk with paul
+              - there are registers to report the jack detect status
+                - should this be implemented with I2C?
+                - paul designed some of the sub modules
+                - he has a powerpoint on the jack detect
+            - run Tim's testbench
+          - AX61
+            - if I2C is still not working, try new design method with clock generated delay
+          - AX49 vectors
+          - AX64 emulation meeting
+            - output can be I2C or LEDs or whatever
+            - plug into load
+            - read results
+            - if results match pass or fail
+            - EC table has load impedance ranges
+            - visio file 
+            - create spreadsheet to paste in values read from FPGA
+            - patrick can create spreadsheet
+        - wednesday
+          - AX64
+            - simulation
+            - chipscope
+          - AX54
+            - trim routine
+          - vectors
+            - rewrite tssi text importer
+            - TQFN:
+            - inital setup VDDs=1.8V, SPKVDD=4.2V, 1M clock
+            - unit S1 fails 20 errors
+            - unit S2 passes
+          - maxim drive real time backup
+          - FPGA makefiles with boldport
+        - thursday
+          - AX64 
+          - AX49 vectors
+            - wait on char
+            - can implement new features
+              - logic level adjustment
+              - grab .txt file name from XML file
+              - 'performance mode' toggle switch
+                - turns off error fetching
+                - turns off 'show data'
+                - make pass fail light work correctly when errors are not fetched
+          - synology
+            - SVN
+            - backups
+          - AX54
+            - review EVKIT layout
+              - EVKIT MCLK_SEL
+                - 0 = 11.2896MHz
+                - 1 = 24.576MHz
+                - does this match FPGA implementation?
+            - look up platform flash power up sequence
+        - friday
+          - DAC and ADC interfaces
+      - W1
+        - monday
+          - pre planning
+            - AX54 sim is running with OSR_SEL
+              - check logic for OSR SEL and MCLK SEL
+              - build testbenches for different settings
+              - build for FPGA and try in the lab
+              - extra credit: remove clock gating and other nonsense from cgm (already replaced dacclk_gate with DACCLK on mod, could do globally)
+            - AX61
+              - get new edf file from shalini's workspace, debug
+              - work with Bob on implementation
+            - diskstation setup
+              - users
+              - map drives
+              - name per vincent
+              - test VPN access
+              - try backup schemes
+              - install ipkg + SVN
+              - try accessing from EOD
+        - Tuesday
+          - GPS self assesment
+          - ML506 current measurement
+            - review EVKIT schematic and supplies
+            - copy supplies from reference design
+          - AX54 POR circuit
+          - AX61 
+            - bring up tool chain
+            - review I2C circuit
+            - review build logs for removal of logic 
+        - thursday
+          - pre planning
+            - AX61
+              - bob is looking at RTL
+              - get toolchain running
+            - AX54
+              - listening test. try AX08
+              - debug FFT issue
+              - POR circuit
+              - review latest EVKIT schematic
+              - get back with eddie on power info
+            - setup SVN server
+            - AX64 RTL supposedly ready this week
+            - prepare DIO PR
+        - friday
+          - AX49 Scan failures here
+          - shortlist
+            - AX61 debug and tool chain
+            - AX54 POR and FFT debug
+            - AX49 Scan
+            - SVN setup
+            - AX54 power
+            - request EVKITs - internal  ship #10825
+          - notes
+            - why does ISE have different results between shalini and myself with supposedly the same input files?
+            - shalini files
+              - filelist_des.txt
+              - AX61_digtop and FPGA_top in support modules folder
+              - is synplify adding tri-state buffers?
+            - AX49
+              - labview 32 bit still running out of memory with 2.7GB of RAM used
+              - labview 64 will not load device drivers correctly (are there 64 bit versions of HSDIO and NIHWS dll's?)
+    - FY2011
+      - W52
+        - monday june 20
+          - AX54
+            - work with Paul on 128 and 64 OSR clocking
+            - look into high jittered clock
+            - start FPGA verification spreadsheet
+            - start PCB
+          - AX61
+            - shalini working through I2C synthesis issues
+          - AX64
+            - waiting
+          - labview
+            - move I2C builds to dedicated builds folder
+            - populate 2010 instrument library SVN
+            - plugin sequencer has been sitting for a while
+        - tuesday
+          - pre planning
+            - AX64 set up emulation environment
+            - some simulator time
+            - review evan's AX54 board
+        - friday
+          - pre planning
+            - AX54 sim environment is a go. proceed with 128/64 OSR feature.
+              - then build testcases
+              - new FPGA build
+              - feedback on evan's daughter board
+            - AX61
+              - check new BIT file, probe pins
+              - reset should be low
+              - scl_scan should be SCL
+              - review design and flow with shalini
+            - music stand
+      - W51
+        - tuesday june 14
+          - pre planning
+            - AX54
+              - fdet and dre are gone. start working on removing oscclk. Set up bench test with same MCLK as EVKIT. Use DIP siwtch for MCLK_SEL and OSR_SEL
+              - work on PDM modulator module
+              - get the simulation to work for dig top fpga
+            - AX61
+              - try to understand the synthesis scripts a bit more. in the meantime get new generic top from shalini. proceed with device mapping and pin planning
+        - wednesday
+          - AX61
+            - edf netlist is too small, why?
+          - AX54
+            - continue with verilog development
+          - labview
+            - get I2C GUI to royston
+          - computing
+            - create archive folder for emails
+        - thursday 
+          - pre planning
+            - AX54 compile generic with new modulator
+            - AX54 - where is the PDM clock?
+            - AX61 no I2C, where to start debug
+      - W50
+        - monday june 6
+          - AX48 vector setup
+          - AX54
+            - respond to EVKIT questions
+              - copy power specs from xilinx kit
+            - RTL coding
+            - review frequency detector solution
+          - AX61
+            - compile for FPGA
+          - AX64
+            - figure out ADC and DAC serial parallel conversion
+          - LabVIEW
+            - commit all updates from macbook
+          - assist with PR80 patterns
+        - tuesday
+          - AX61 compile
+          - AX61 I2C map
+          - organize FPGA files and check-in to ICmanage
+          - AX54 system verilog in synposys
+          - AX54 FGPA talk Matt
+            - need seperate DIP switch to select 128OSR vs 64OSR output clock
+            - PDM stream mixer is likely a simple MUX
+              - 20ns setup and hold spec, but will work with 2ns
+        - wednesday
+          - AX54 compile sys verilog
+            - sys verilog will not compile correctly. It seems to be dependent on the device type. All I get is an empty netlist. Shalini got a 17MB file for the default device, but simply changing the device is the switch to the empty netlist.
+          - organize std cells
+            - started std_cells_fpga.v in home folder
+            - create list of cells used in AX54, AX61
+          - AX61 compile
+            - stuck on something that shailni needs to fix tick_divider
+          - respond royston
+          - AX54 coding
+            - mod mixer
+            - remove freq det
+          - AX54 flow
+            - how to implement directory structure for dc_generic->synplicity->ISE flow?
+              - nested or seperate trees?
+            - get back on the generic flow
+            - check some things in and move forward with frequency detector removal
+          - vim
+            - windows vimrc is called _vimrc and kept in /users/username/
+              - Can I symbolic link and sync with dropbox? - yes. done.
+              - should I maintain seperate vimrc for different platforms? maybe, now for now.
+        - thursday
+          - pre planning
+            - AX54
+              - continue with generic flow, try out stereo again to get back on track
+              - start fooling with the frequency det
+              - try to make some sense of IC manage commands
+          - AX54 EVKIT meeting
+            - are there maxim switching regulators
+            - 1.2V @ 1A and 3.3V at 3A
+            - pick one more pin on FPGA for ADC (future expansion)
+            - 3 row headers, 2 column with row of GND
+              - short I2S to codec
+              - ground row for
+            - choose FPGA pins for 
+              - OSR_SEL and MCLK_SEL
+            - double check current requirements for platform flash power
+            - EVKIT assembly in MPOC
+            - PARTS wafer out July 23. Samples 1 week later.
+        - friday
+          - pre planning
+            - AX54 EVKIT
+              - update spec spreadsheet with FPGA pins for OSR_SEL and MCLK_SEL
+              - determine power requirements for platform flash
+              - run simple PCM simulation
+              - figure out what to do with oscclk
+      - W49
+        - monday
+          - to do
+            - AX54
+              - EVKIT FPGA schematic
+                - FPGA pins
+                - power
+                - assignments for I2S
+              - AX49 click pop
+              - mail audio precisons
+          - FPGA emulation platform meeting
+            - emulate things that take a long time to simulate - hard to model
+            - do not want to change interface to digital core
+            - goal is to increase likelyhood of first pass success
+            - examples
+              - AX48 ADC path
+              - limiter feedback
+              - feedback with digital core
+            - makes sense to target hardware platform for apps to evaluate
+            - there are common IP blocks to use in a modular fashion
+            - look at past bugs and ask if they could have been emulated
+            - same engineer should be assigned to FPGA eval and silicon eval
+            - DACs and ADCs could be mostly for convenience of using analog signals
+            - create plugins for digital cores
+            - apps
+              - rapid prototyping
+              - demos
+              - listening tests
+            - action items
+              - design: review past bugs, specifically analog
+              - brian: work on next digital products to define hardware/software plugins
+                - look for 'analog' FPGAs
+              - apps: what functions do they want
+          - AX64 FPGA review meeting
+            - pre meeting
+              - how will dig_top map to the daughter board?
+              - are we emulating everything
+              - will there be I2C
+                - how was I2C handled on AX48, check UCF
+              - is there an evaluation plan?
+              - layout
+                - is there a external VCC clip
+                - should we break out spare pins to an extra header?
+            - meeting
+              - evan is changing around ground return
+              - some components are 0402
+              - travel to sunnyvale for evaluation
+                - june 13 RTL ready
+                - before the end of june
+              - there is some serial to parallel RTL that must be written
+              - might need to run some simulations
+              - ADC is only thing with a clock, ADC data comes out serially, 5MHz
+              - will need to use a tack switch on the ML506 to trigger jack detection sequence
+        - tuesday
+          - LabVIEW advanced day 1
+            - intro
+              - fabiola@delacor.com
+              - labview architects fourm June 23
+            - action items
+              - make simple state machine template with a simple test sequence
+                - sequence should be reconfigurable
+                - can put entire state machine inside for loop for multiple iterations
+              - look into JIRA for personal labview bug tracking
+            - VIPM is recommended - paid version has VIPC files (by reference packages)
+            - VIshots.com podcast
+            - book: the object oriented thought process
+            - bug tracking and management: fogbugz.com
+            - there are issues with named queues
+              - name could be duplicated
+              - by reference is much better
+                - can pass with FGV, DVR, or inside and object (somehow)
+            - lavag.org
+            - book: deisgn patterns by the gang of four - there is a NI form post with labview translations (OOP design patterns)
+            - more good ideas mgi.com - read anything VI
+              - MGI package for VPIM
+            - try using XML instead of INI for larger data sets
+              - labview XML reference library
+            - try state machines within state machines to improve sequencing
+              - instead of a for loop with a bunch of steps, put a state machine inside a for loop
+            - enum cannot be changed at runtime, a text ring can
+            - captions and labels
+              - caption can be a long description, does not show up on block diagram
+              - caption shows up on context help on connector terminal
+            - VI tree is a good way to document an API
+              - execution flow chart
+            - .lvlib is an XML file just like .lvproj
+              - .lvlib has namespace protection
+              - .lvlib puts a tag inside member VIs indicating they are a library member
+              - private VIs cannot be added to block diagram
+              - private VIs need to be manually removed from palettes (with _dir or .mnu edit)
+            - variants have attributes that can be set and accessed by name
+            - in place element structure
+              - prevents data copies to preserve RAM
+              - bundle/unbundle, index arrays
+            - create a single element queue to pass data by reference in APIs
+              - only one location in memory available
+              - element must be manually de-queued or cleared before new one can be added
+            - NI systems engineering examples
+              - API to send data via TCP/IP
+              - sending data as flattened strings
+              - must decode data type using label
+              - STM installer on advanced course CD
+            - there are some VIs not in the palettes
+              - select a VI -> labview dir -> vi.lib -> utility -> variant data type
+              - several special variant VIs
+            - templates
+              - add templates to labview2010/templates
+              - can include other supporting VIs
+              - can include png of block digram for description
+              - .ctt - control/typedef template
+              - not sure if sub VIs can be in a folder, or if they would show up as templates
+              - JKI state machine is another option
+                - there is a good video on this
+                - jkisoft.com/state-machine/
+                - good examples of string parsing for commands, arguments, and comments
+            - queues
+              - dequeue element will wait forever
+                - you can set a timeout and default value
+                - there is a way to check if it returned the default
+              - get queue status - preview all elements in queue
+            - user events
+              - can be used for two way communication
+            - always create typedefs for enums or clusters
+            - vit
+              - when opened from labview open menu - the vit is opened for editing
+              - when opened to create new VI from template
+                - open from windows shell
+                - open from templates dialog
+            - press ctrl when mousing over to switch pointer functions
+            - when setting breakpoints there is a retain values on wires button
+            - client server example is two QDMH sending data to each other's queues
+            - 
+        - wednesday
+          - LabVIEW advanced day 2
+            - VIPM has an arduino module
+              - https://decibel.ni.com/content/docs/DOC-15971
+            - can create build specifications (source distro) to install VIs to a particular directory
+              - can use to install templates like ex 4-3
+            - try view -> browse relationships from block diagram
+            - user events
+              - fire an event in an event structure programitically
+              - send data with event
+              - could use to create a messaging system
+              - could use to stop all running VIs (as long as they are waiting at an event structure)
+            - look up brat VIs on lavag
+            - when working with clones ctrl-m will bring up the original 
+              - ctrl-m will also lock/unlock the block diagram
+              - originally, ctrl-m was a way to preview the run state
+            - VI server
+              - can launch multiple instances of vit (it creates a new version each time)
+              - video to deal with wait until done and auto dispose
+              - vishots has a video demonstrating re-entrant vs vit
+              - not much difference between launching vit or reentrant (same code could work for both)
+              - invoke node - close: removes from memory
+              - property node - set front panel false: just closes front panel
+              - VI reference node
+                - strictly typed connector pane
+                - could use something generic like a variant and string
+                - will show front panel
+                - don't need to use 
+                  - run VI
+                  - open front panel
+                  - set control values (property node)
+            - use "application directory" to return relative paths
+            - active x
+              - can open .xlt and it will make a new copy
+              - there is an enumerator to determine file type for xlsx etc.. search for excel file type active x
+            - GOOP is a by reference toolkit (~$1500). Some functionality beyond native labview OOP.
+            - lavag has some hacked methods to create GOOP style by reference
+            - DVR vs single element queue: cannot access DVR by name (there is no naming)
+            - http://www.amazon.com/Object-Oriented-Thought-Process-Matt-Weisfeld/dp/0672330164/ref=sr_1_1?ie=UTF8&qid=1306955972&sr=8-1
+            - OOP
+              - DMM
+                - using typedef inside object is OK
+                - to get different DMM panels could use soft panels (loading child methods)
+            - export data to excel or clipboard - right click on graph or array ->export
+            - get all references for a class (booleans, double, etc...) - traverse for references
+        - thursday
+          - LabVIEW performance day 1
+            - beta class. currently being updated for LV2010. 
+            - test vector tool performance ideas
+              - process patterns in consumer loop
+              - use in place element structure for array operations
+              - disable debugging
+              - add benchmarking VIs (for pattern load)
+              - remove repetitive use of build array
+            - VI properties -> allow debugging. allows breakpoints, step in/out. Uncheck to see performance perhaps improve. Closely models performance inside .exe.
+              - there are several performance improvements that only happen when debugging is disabled. See examples in course manual.
+                - constant folding - optimizes blocks of code into constants.
+                - dead code elimination
+                - loop invariant code
+                - inplaceness
+            - for loops can be configured to execute in parallel in different cores
+              - not always safe to do (i.e. there is a shift register)
+            - do not use build array
+              - if possible pre allocate an array using initalize array. If array size is unknown it is better to pre-allocate an array that is purposely too large.
+              - build array and concatenate strings reallocate memory
+              - for an unknown array size try using a queue to build up elements, then flush the queue to an array
+        - friday
+          - LabVIEW performance day 2
+            - type coercion causes memory reallocation
+              - a big array could have a copy made in memory when coerced
+            - local varible is better than property node
+              - might load front panel to memory
+              - all possible properties loaded for each property node
+              - requires an extra buffer allocation
+              - always use a local varible before a property node for value set/get
+            - input terminals set to required helps reduce memory usage because default data is not read
+            - show buffer allocation tool. puts black dots on block diagram. tools - profile - show buffer allocations
+            - use in place element structure
+              - cleaner block diagrams for cluster unbundle/bundle and array element index/replace
+              - data by reference
+                - using get data value reference creates a reference to a single location in memory
+                - the in place element structure is the only way to access data from a DV
+            - subVI can run in place if all operations inside are inplace
+            - front panel updated can be deferred while doing lots of VI server adjustments, just update when everything is done
+          - summary 
+            - new techniques to try
+              - any array/cluster/waveform operation
+                - in place element structure
+              - moving data
+                - local varibles
+                - single element queue
+                - pre allocate array, then get array subset at end. Keep count using seperate shift register.
+              - add templates to template menu
+                - producer consumer
+                - simple state machine test sequence
+                  - include template for subvi with data cluster in/out
+                - FGV
+              - performance
+                - parallelize loops
+              - OOP
+                - load plugins from folder
+              - use launch vit to launch clones
+              - close all control references in I2C reg map
+      - W48
+        - friday 5-27-11
+          - AX54 EVKIT IOS meeting
+            - pre meeting questions
+              - how does the EVKIT engineer want information for pin assignments, etc? A big excel spreadsheet?
+              - what exactly I2S modes does the FPGA need to support
+        - thursday 5-26-11
+          - AX54
+            - matt f talk
+              - switch to select 128OSR or 64OSR can also select filters, eliminating need for frequency detector
+              - I2S input to FPGA does not need to support every mode, just what is from USB audio thing and 96k 32bit
+              - BCLK and MCLK are both 6.144, why not tie together?
+            - go ahead with stereo design
+              - FPGA_top to instantiate 2 digital_top s
+              - there will be two modulated outputs for now, tie off one to left and one to right at digtal top inputs
+            - look at platform flash for memory capacity and clocks
+              - XCF08P device for spartan 3 1400, $12 at digikey 
+        - wednesday 5-25-11
+          - AX54
+            - RTL modifications
+            - run simulation using FGPA modified modules
+            - pick platform flash
+            - options for 1.5MHz osc clock
+              - xilinx internal clock gen
+              - xtal on board
+              - divide down MCLK
+              - clock gen onboard platform flash?
+              - remove frequency detector and use dip switches to select filter (for different LRCLKs)
+            - FPGA device
+              - FPGA_top pin assignments
+              - power supplies and bypassing
+              - platform flash connection
+          - AX61
+            - shalini to create bridge between two digital top modules
+            - someone to create fpga_top
+          - AX64
+            - evan almost done with daughter board
+        - tuesday
+          - AX64 platform flash and FPGA devices, pinouts and external components
+          - AX54 emulation
+            - check in files
+            - clean up repository
+            - work on readme
+            - review JIRA for new features
+  - reference
+    - computer stuff #info 
+      - winSCP/filezilla
+        - login to machine by hostname. Use hostname command at terminal.
+          - i.e. aulxc15
+      - thinkpad
+        - AUS-LT-BDONOGHU
+      - MG lab
+        "\\maxim-ic\sunnyvale\MGLAB"
+      - software folder
+        "\\maxim-ic\sunnyvale\Public\Software"
+      - PXI 3
+        - Brian, mxim
+      - SVN
+        - svn://10.37.200.193/labview2011
+      - synology
+        - 10.37.200.193
+        - web interface on port 5000
+    - software #info 
+      - Xilinx ISE license: 2100@svlmmglob.maxim-ic.com
+    - goals
+      - Become FPGA expert
+        - Refine software and hardware flow
+        - Create documentation and fpga module library
+          - Standard cells to replace maxim IP
+          - Setup guides for different hardware platforms
+          - Helper modules for lab eval
+            - Clock generation
+            - Status LEDs
+            - Button and switch interface
+      - Dominate with labview test framework
+        - Get users
+        - Make it fast and robust
+        - Should play like a game
+    - principles
+    - Labview
+      - Labview test framework
+        - manifesto
+          - User
+            - Anyone can use this thing
+            - Anyone can drop in any VI
+            - basic instruments with a click
+          - Archtiecture
+            - Objects will be stored in a FGV
+      - Shell
+        - manifesto
+          - command center (list commands below)
+        - purpose
+        - Commands
+          - Commands are names of VIs in particular folders
+            "The shell will scan selected folders for VIs and get references to those VIs"
+          - The shell can pass values to the controls of any command
+        - Modules
+          - Special state machines that accept commands from the shell
+      - plugin sequencer
+        - manifesto
+          - sequences VIs
+          - easy to build and re-arrange sequences
+          - load large conditions sets from excel
+          - build blank excel template automatically
+          - load folder of plugins
+          - anyone can drop in any VI
+        - plugins are objects
+          - basic plugin
+            - controls any VI with VI server
+        - Architecture
+          - Producer consumer
+          - Consumer watches queue for plugin objects
+          - Producer
+            - Builds sequences
+            - Bundles conditions data
+            - Builds conditions templates
+      - Instrument API
+        - manifesto
+          - ready to go soft panels
+          - drop into an existing GUI with three steps
+            - add typedef
+            - add initialization VI
+            - add event case for typedef value change
+          - built in data logging
+          - simple to add as test step in a sequence
+          - FGV storage of data to avoid wires
+        - inbox
+          - storing a reference in a FGV will only work if there is one DMM typedef instance. If there are mutliple GUIs running it will not work. should go back to an FGV storing an array of objects.
+        - DMM
+        - Scope
+        - Sourcemeter
+        - DIO
+        - DG2020
+        - Audio Precision
+        - FGEN
+        - Power Supply
+      - Data logger
+        - manifesto
+        - features to add
+      - Conditions server
+        - manifesto
+          - will transfer data from files to labview
+          - will allow conditions to be changed with ease
+          - will have easy to understand labeling
+          - will not execute commands
+          - will auto generate conditions templates
+        - Sends data from excel to controls on a front panel
+      - State machine templates
+        - manifesto
+          - will be added to the labview template menu
+          - will run out of the box
+          - will have built in documentation
+        - GUI
+          - top level GUI
+        - Test
+          - single test sequence
+          - to avoid the long sequential test that is hard coded
+          - looping tests should have this state machine inside the loop
+      - I2C GUI
+        - Features to add
+          - emulation mode
+          - template support
+            - open blank template for user
+            - support new register map standard from Michael Petersen
+          - preferences pane
+            - bool: read all after write preset
+            - I2C API to use
+              - artis or command module
+              - 8 or 16 bit write style
+          - write I2C object
+            - support different write modes, APIs, hardware
+          - built in documentation
+            - pull from excel template, or just open the template to the correct spot
+        - Bugs
+        - Distribution
+      - Test vector tool
+        - features to add
+        - performance
+          - speed up waveform viewing
+      - templates
+        - FGV
+        - producer consumer QDMH
+        - standard QDMH
+        - bench test sequence (no event structure)
+        - subVI with data cluster in/out
+      - tool chain
+        - documentation
+          - how to document for all labview users. How to get all the libraries and start using the tools.
+        - VIPM
+        - SVN
+          - SVN setup guide
+            - change .svn to _svn
+            - setup diff and merge tools
+        - instr.lib
+        - user.lib
+      - Labview License #info 
+        - 2010: M75X03610
+        - RGT: M74X92886
+    - Maxim
+      - ZINT = 10825
+  - someday maybe
+    - decor for new lab
+    - microchip filter design tool
+    - multi-sim
+    - pic programming
+    - bob interested in vim
+    - design power user lunch n learn. or this could be on a wiki
+      - IC manage
+      - alias file
+      - text editors
+      - command line fu
+  - archive
+    - Labview shell
+      - The only way to deal with the labview test framework and OOP is to create lots of simple testbenches to verify individual classes i.e. DMM soft panel. Do not get it all mucked up in a huge state machine during development. 
+      - Sequence object
+        - Array of plugin objects is the sequence
+        - Values for each control on each loop iteration
+        - Number of times to loop sequence
+        - Number of times to loop a particular vi during the sequence
+        - Two way translation between sequence object and excel spreadsheet (or any other script format you could imagine)
+      - implement loading folder of VIs as plugin objects
+      - create methods for VI plugins
+        - run VI
+        - load controls
+        - get indicators
+        - show/hide front panel
+        - is VI open?
+        - is VI running?
+      - How should a script look
+        - Excel template with empty slots for 
+        - Interactive GUI to build excel template
+      - shell methods
+        - Queued state machine to execute sequence steps
+          "One state machine to handle scripts and interactive mode. "
+          - Commands
+            - Run vi
+            - Show front panel and wait
+            - 
+        - Conditions data is an object inside plugin object
+          - Conditions object contains vis input and output. For traceability and debugging
+        - Method to build sequence object from script file
+        - GUI to select vis and arrange in sequence. Then build excel template. 
+- Home
+  - inbox
+  - boring shit that needs to be done soon
+    - buy shannon baby gift
+    - Powerpoint remote for courtney - due Jan 19
+    - Macbook VGA adapter - due Jan 19
+    - register impact driver #action
+    - get bunny registration sticker #urgent 
+    - bunny 40k maintence
+  - boring shit that needs to be done eventually
+    - We heard a mouse scratching - should it be hunted down and murdered?
+    - download and archive old pay stubs #action
+      - for that matter, also keep electronic copies of:
+        - utility bills
+        - credit card statements
+        - bank statements 
+    - are we over insured with USAA?
+    - purchasing
+      - USB mice
+      - kneeling chair
+      - safety razor and saving kit
+      - New zenni glasses
+    - grandma and pop wedding DVD, where is it? #action
+      - grandma has a copy
+      - check tivo
+    - David advice on contacts and bookmarks sync
+  - daily notes
+    - Jan 2
+      - pre planning
+        - call dad
+        - garden - compost, weeding, spray seaweed
+        - run
+      - late afternoon shortlist
+        - try patch bay
+        - tidy desk
+        - clear out paper inbox
+        - guitar
+        - weekly planning
+        - project time
+        - run
+        - dinner
+    - 2012
+      - Jan 1
+        - evening shortlist
+          - laundry
+          - cleaning
+          - log garden hour
+          - dinner - salmon, collards, black eyed peas
+          - desk tidy up
+          - check spackling, then sand and paint
+          - movie
+    - 2011
+      - May
+        - 31
+          - started labview advanced today, lots of new ideas. I think I am ready to build the labview test framework. 
+      - June
+        - 29
+          - things on my plate
+            - envelope system of finances
+            - pay off the bunny
+            - slemmons's headphone amp
+            - SVN servers (home and maxim)
+            - batch process chm books
+            - diskstation backups
+            - ebook organizing
+            - sheet music organizing
+            - barton springs is calling
+            - 3 day weekend ahead
+        - 26
+          - courtney trip to do
+            - setup SVN diskstation
+            - setup USB drive 2 on diskstation
+              - determine use
+            - use diskstation itunes server
+            - C coding and tool chain
+            - python coding and tool chain
+            - copy labview trunk to home SVN
+            - dropbox organizing
+              - plaintext re-org
+              - sheet music flow
+            - play guitar
+            - organize songs
+            - condo work
+              - sliding door
+              - utility closet
+            - read
+            - organize ebooks and book flow
+            - tweak apple tv xmbc
+            - implement envelope system
+            - work on linux help files
+            - slemmons project
+        - 4
+          - a nice weekend. pizza and peroni at the backspace. a town lake run with a black and white pood sighting. 2 days of monkeynest and labview. skipping the maxim picnic and loving it. the tree of life (movie).
+          - I just finished working on some new labview templates. They will allow me to develop quickly. It is very important to develop templates for life. Everything that needs to be done could benefit from careful planning and preparation. If everything has been properly prepared the job goes much smoother. Taking the time to automate and organize simple tasks leave much more room to actually take care of challenges.
+            - what else could benefit from templates
+              - guitar
+                - spend time listening to potential songs
+                - carefully choose sheet music and save in a good format
+                - pick the best key for me
+                - have it all accessible
+              - finances
+                - bills autopaid
+                - auto-generate monthly reports
+                - make saving automatic
+                - catch over-spending easily with weekly reviews
+              - cooking
+                - proper utensils, clean and available
+                - recipe database
+                - list of meal ideas
+              - exercise
+                - 
+              - cleaning
+                - a cleaning kit
+                - a checklist of cleaning tasks. monthy, weekly, etc.....
+              - reading
+                - book list
+                - books loaded to central location
+                - books converted to proper format (epub)
+              - condo repairs
+                - tools organized
+                - list of repairs and steps required
+      - July
+        - 12
+          - things going on
+            - slemmons HP amp
+              - need to make a prototype asap
+            - finances
+              - student loan spreadsheet
+              - mortgage refinance calculator
+              - organize dropbox folder
+              - need a 'spending journal' to track weekly purchases
+              - bunny pay off
+              - add USAA accounts to mint
+            - book organizing
+            - reddit is contributing to a short attention span
+            - guitar songs
+            - I would like more time to work on some condo projects
+            - do the mazda's brakes need checking?
+            - we need a really early morning workday in the garden
+        - 6
+          - tonight
+            - how to use makefiles and boldport
+            - water
+            - slemmons project brainstorming
+            - home SVN mucking around
+            - servers listing in 1password?
+      - August
+        - August 21 2011
+          - things going on
+            - cancun and chicago planning
+            - student loan payment plan
+            - raw cleanse
+            - clearing the mind
+              - how to I keep my mind calm
+              - how do I focus on small tasks but don't lose the big picture
+              - how to I keep first things first
+              - how do I keep many projects in progress
+            - OOP framework
+              - need more time to code
+            - guitar
+              - has been neglected
+              - stop endless noodling
+              - pick some songs and play them
+              - play with garage band. make simple tunes. keep it fun and easy. it is a process
+              - use the pignose some 
+            - porjects on my mind
+              - making music: beats and guitar
+              - python web framework
+              - bookmarks home page(s)
+              - blog design
+              - objective C programming
+              - labview classes
+              - linux command line fu
+              - C + linux command line
+              - shell scripting of FPGA builds
+              - condo bathrooms
+              - desktop headphone DAC
+              - arduino temp sensor + web server
+              - financial planning and investmests (401k and IRA)
+        - August 10 2011
+          - mind dump
+            - git
+              - bookmarks 
+                - get git working on synology, check in/out files
+              - vimrc
+            - shell commands
+              - take it to the next level
+                - system tools
+                - scripting 
+                - piping and file IO
+                - searching
+            - FPGA synthesis flow
+              - how to make a build script?
+            - xcode and objective C
+            - labview OOP framework
+            - guitar
+            - cancun
+            - chicago
+            - bunny tail light
+            - check all tires
+            - financial templates
+              - make saving automatic
+              - make budgeting automatic
+            - books to read for cancun
+              - find some new areas to explore
+            - mom's birthday
+            - courtney recommends acupuncture
+      - Sept
+        - 11
+          - current projects:
+            - skype phone. pedals with patrick. github. vimrc. bookmarks homepage. labview architecture. guitar. finances. travel. 
+            - amazon book order
+          - financial brainstorming
+            - tracking tools
+              - mint - data source. 
+                - dump to raw data files
+                  - transactions
+                  - spending by category
+              - quick budget
+                - current status over 1-2 weeks
+              - budget by month
+                - budgeted amounts, actual monthly amounts, running average per month
+              - debt tracker
+                - interest rates, payoff schedules
+              - savings planner
+                - retirement accounts over time
+                - worksheet to calculate amount needed for retirement
+              - maxim
+                - ESPP outlook
+                - RSU vesting schedule
+                - salary breakdown
+                  - ESPP + 401k deductions
+            - automatic payments
+              - travel fund
+              - emergency fund
+              - mortgage
+              - HOA
+              - student loans
+              - fun money
+                - restaurants
+                - concerts
+                - toys
+        - 6
+          - very busy at work lately. doing lots of stuff but not gettting lots done. need to focus on getting products characterized, FPGA flow, tools and code, labview architecture, refining I2C regmap and test vector tool, getting involved in the biggest and best projects, making people reliant on my software, managing the lab's data server, sharing information with everyone (such as setting up a design wiki)
+          - at home. two nice trips coming up. got to get ready. the fall is coming. time to plant some veggies. saving some money is nice. I'm ready to work on the condo a bunch. running outside is about to be pleasurable again. we are bunnies in love. working on some web programming is nice. going to build a vintage skype phone. time to fire up the arduino. gots to make more time for guitar, enjoy learning a new song now and then. read some books. only way to read is have a reading lists and keep the books handy. always read at a certain time. I'd like to get the bikes out and do some epic rides. I promised dad golf at barton springs, time to look into that. I should play with him. living life to the fullest is nice.
+      - Oct
+        - Oct 23 2011
+          - We both got sick this week from allergies. Looking over finances things are tight for a while with expenses left over from travelling.
+          - goals nov - jan #goals
+            - do a simple condo project, something easy to start
+              - blinds
+              - utility closet
+            - start planning for move, make a to do list for moving
+              - condo - sell or keep?
+                - what improvements MUST be made regardless
+            - maxim
+              - get OOPlugin to proof of concept status, with scripting and loading of data to / from excel
+            - career
+              - identify career skills needed to find new jobs
+                - search job postings and note in demand skills
+              - 
+            - guitar
+              - lead sheets, nicely organized in dropbox
+            - information
+              - flush out dropbox/synology data storage flow
+              - work out journaling flow and the 'stream'
+                - learn to search across directories of text files easily
+                - use # hashtagging system
+        - Oct 18 2011
+          - OOPlugin
+            - Next to implement
+              - RunVI
+                - Launch multiple clones
+                - Populate front panel controls
+                - Return specified indicators
+                - Launch and leave
+                - Keep track of reference
+              - Archtiecture
+                - Command registry
+                - Return values
+              - Command line
+                - Implement = to set controls
+                - Wait for return value
+              - Script
+                - Implement command return
+                - Load script
+                - Script generator from excel
+              - Plugin template with command line and status display
+        - Oct 29 2011
+          - Plan for moving
+            - Job search
+              - References
+              - Job sites
+              - Headhunters
+              - Skills
+              - Salary research
+            - Selling the condo
+            - How much do we need in savings
+          - Wordpress site
+          - Financial planning
+          - Information
+            - Synology and dropbox architecture
+          - Guitar lead sheets
+          - 
+      - Nov
+        - Nov 26
+          - weekend shortlist
+            - fun bar
+            - groceries - vegan this week
+            - guitar
+            - c the hard way
+            - OOPlugin
+              - sample scripts
+              - review of functionality 
+              - should the architeucture have a seperate UI loop? (status display)
+                - could expand to show contents of objects
+            - quick budget
+            - when is ESPP?
+            - xmas list to rents
+            - xmas spending spreadsheet
+            - put stuff in a cigar box
+            - plan graduation weekend
+              - lunch after ceremony
+        - Nov 24
+          - Manifesto
+            - The next generation will write their own software to solve everyday problems
+            - Cheap embedded hardware and sensors will be everyday tools
+            - Programming will be an essential skill for all professions
+            - Open source is the default
+            - Posting source code will be akin to posting on twitter
+            - We will revolt against underdesigned, crappily manufactured consumer products by modifying to suit our needs
+            - An open community and culture of sharing will contribute to exponential growth in knowledge
+        - Nov 23
+          - Pre planning
+            - Drinks with jeff/anderson?
+            - Is traffic fucked?
+            - Brian time
+              - Guitar lead sheets
+              - Finances
+              - Ooplugin
+              - Programming learning thru making code snippets
+            - Help cooking
+            - Xmas planning
+            - Gas
+        - Nov 21
+          - Pack
+          - Macbook
+          - Sync iphone
+          - Razr for emily
+          - The information
+          - 
+        - Nov 20
+          - garden hours
+          - OOPlugin
+            - implement command list and command line help
+        - Nov 19
+          - today
+            - REI water bottle
+            - garden - do some work
+            - quality seafood dinner
+            - violet crown movie
+          - plan for thanksgiving
+            - plano: pie and veggie dish, eat around 2pm
+        - Nov 14
+          - started learning c the hard way. good way to learn with lots of examples and make built into the flow
+          - the best way to learn a new technology is building something with it and having reference materials close at hand
+          - it's hard to believe that before long we will be selling the condo and moving on. It wil be a big change but should be an adventure.
+          - looked at some job postings, definitely a lot of software stuff out there. Skills to learn include C, make, verilog coding, FPGA verification, SQL, perl, python, etc...
+        - Nov 12
+          - project tracking organization
+            - there are too many projects to do. I need to put most of them aside and designate a top 5.
+            - top 5 can be re-evaluated at any time
+            - someday maybe has a list of potential projects
+            - separate specific projects from general topics and single shot to do's
+          - finished steve jobs
+            - focus is very important. figure out the top things you want to do and ignore everything else
+            - apple is great because it's focus is making great products before anything else
+            - simplicity is the ultimate sophistication
+            - great artists and great engineers are similar
+            - when the sales guys run the company, products suffer
+            - keep moving
+        - Nov 6
+          - monkey nest shortlist
+            - OOPlugin
+            - financial sheets
+            - target
+              - shampoo
+              - body wash
+              - look at beard trimmers
+            - run shoal creek or pease park
+              - update ipod first
+            - garden
+            - guitar
+          - stream
+            - create project 'spaces'
+              - project tracking container
+              - use dropbox or SVN
+        - Nov 4
+          - Courtney gave me a nice birthday
+          - Weekend pre planning
+            - Financials
+              - Quick budget
+              - Monthly expenses
+              - Budget scenarios
+                - 1/3 method
+              - Mint review
+              - 9 month savings plan
+            - Guitar lead sheets
+            - Household
+              - Radiator
+              - Improvement planning
+              - Groceries
+            - Office tidy
+            - Information review
+            - Computer skills time
+            - Projects
+              - Look into creating project "spaces"
+                - Both physical and electronic
+                - Allow projects to be develped with asyncronous random steps
+              - What are projects for the next few months
+            - Run
+            - Garden
+      - Dec
+        - Dec 31
+          - afternoon shortlist
+            - laundry
+            - utility closet / patio clean up
+            - desk clean up
+            - ddwrt setup
+            - guitar time
+            - vacuum
+            - garden
+            - read
+            - fredboard
+            - run dishwasher
+        - Dec 30
+          - houndstooth notes
+            - DONE list
+              - utility bill
+              - student loan interest
+              - USAA insurance
+              - ATT data audit
+              - google app specific passwords to 1password
+              - saved 2011 utility report
+            - to do list
+            - monoprice order
+              - need macbook VGA adapter by dec 19
+              - patch panel
+              - rack stuff perhaps
+          - financial meeting
+            - current bills
+              - courtney will pay ~800ish towards MC (combination of payments and credits)
+                - 700 payments
+                - credit for j crew returns
+              - will need to borrow about $1000 from savings to make AMEX payment Jan 16
+            - upcoming expenses
+              - dishwasher - $600. 6 month grace period.
+              - campus visits
+                - clothing
+                  - emily will re-imburse two dresses and boots
+                - salon
+                  - pedicure
+                  - waxing
+                - denison costs are up front
+                - thank you cards
+                - powerpoint remote
+              - courtney clothes and makeup
+              - SCMS
+                - $1000 in savings should pay for it
+                - buy plane tickets in feb
+              - ICA in may
+                - phoenix
+              - new student loan payments the end of Feb
+                - should we put money into the loans now?
+              - condo improvements
+                - bathroom improvements
+                  - light fixture
+                  - sink
+                  - showers
+                  - floors
+                - blinds
+                - bedroom crown moulding
+            - recent expenses
+        - Dec 27
+          - reset amazon password
+          - passwords to reset #action #urgent
+            - citi
+            - amex
+            - bank of america
+            - benefit access
+            - costco
+            - CVS
+            - discover
+            - dyndns
+            - evernote
+            - go amplify
+            - homedpot
+            - kayak
+            - linkedin
+            - lowes
+            - mouser
+            - mycheckfree
+            - myspace
+            - newegg
+            - tolltag
+            - pageonce
+            - usaa
+        - Dec 26
+          - itunes account comprimise
+            - odd $40 giftcard purchase
+            - unknown visa card and address in North Carolina
+            - reset passwords
+              - 1password master password: maxim unix
+              - dropbox
+              - apple ID
+              - mint
+              - need to find other accounts that use jzr password and reset
+              - waiting for response from apple support
+          - movie + lunch in Dallas
+          - central market
+        - Dec 24
+          - Guitar
+            - Oh come ye merry gentlemen
+            - Romance
+            - Canon in d
+            - All the things you are
+            - Freddie freeloader
+        - Dec 23
+          - Is shannon registered?
+          - Take home A&M blanket #plano
+          - Garage lights
+        - Dec 21
+          - tonight
+            - make peppermint bark
+            - shop for stocking stuffers
+              - tea
+              - chocolate
+              - hair rubber bands
+              - card
+              - tiny rabbit 
+              - kgsr cd
+              - sesame body oil
+        - Dec 19
+          - finances
+            - run quick budget
+            - refine flow
+              - transactions -> pivot table -> awesomeness
+          - xmas gameplan
+            - get a card for courtney
+            - include fancy dinner 'certificate'
+            - tamales friday
+        - Dec 17
+          - Run
+          - Groceries
+          - Garden
+          - Finances
+          - Coffee shop
+          - Organize closet
+          - Xmas gameplan + finance meeting
+            - Gifts: jen, michael, grandma and pop
+            - Haircut this week
+            - St
+        - friday dec 16
+          - saturday pre planning
+            - closet
+              - sand spackling
+              - spackle cracks
+              - finish painting
+              - light fixture
+            - shopping
+              - omelet pan for G&P
+              - fun things for courtney
+                - mcvitties
+                - brazillian coffee
+                - stores
+                  - whole foods
+                  - local austin places?
+            - bunny party
+              - egg nog
+              - music
+              - decor
+              - 
+        - thursday dec 15
+          - weekend pre planning
+            - friday
+              - lowes
+                - 3/4" drill bit
+                - better wire nuts
+                - large crack spackling solution
+                - corner spackling solution
+                - plastic tubs
+              - work on utility closet
+                - paint
+                - spackling
+                - light fixture
+                - pegboard
+            - saturday
+              - xmas shopping for courtney
+              - laundry
+              - guitar
+              - coding
+              - xmas bunny party
+        - Dec 13 2011
+          - pre planning
+            - evening meetings
+              - xmas
+              - finances
+        - Dec 12 2011
+          - today
+            - FPGA makefile will be pretty cool
+            - don't forget to make lots of README files
+            - 
+        - Dec 10 2011
+          - sunday shortlist
+            - groceries
+              - spagetti and clams monday
+              - meals thru wednesday\
+            - xmas shopping/planning
+              - courtney
+                - mcvitties
+                - brazilian coffee
+              - put some more affordable items on my wish list
+            - utility closet
+              - painting
+              - light fixture
+            - lowes
+              - long wood screws
+              - wire nuts
+              - plastic storage bins
+              - kilz if needed
+          - 9pm shortlist
+            - tidy up tools and hardware
+            - clean kitchen
+            - lunch for tomorrow
+            - check courtney's flight
+            - tidy desk
+            - guitar tunes
+            - rack planning
+            - columbus jobs #action 
+            - clean bedroom
+        - Dec 9 2011
+          - weekend stuff
+            - go out with john
+            - utility closet
+            - xmas shopping / planning
+            - financial spreadsheets
+            - guitar concert
+            - groceries
+            - garden
+        - Dec 4 2011
+          - Groceries
+          - Guitar restring
+          - Guitar lead sheets
+          - Upload pictures
+          - Review project priority
+          - Financial meeting
+          - Xmas planning
+          - Utility closet planning
+          - Plant covering strategy
+        - Dec 2 2011
+          - weekend agenda
+            - dinner friday night with brannons
+            - saturday early breakfast
+            - dress and attend ceremony
+            - lunch afterwards
+            - hang around with brannons
+            - saturday night movie or drinks or both
+            - sunday
+              - run or gym
+              - groceries
+  - top 5 projects shortlist
+    - finances
+      - macros
+        - generate reports from transactions.csv
+        - this month spending so far
+        - last month summary
+          - compare to monthly budget
+        - year to date spending by category by month
+        - year to date income summary
+        - largest transactions
+        - most numerous transactions
+      - weekly finance meeting every wednesday #action 
+        - agenda
+          - spending review since last meeting
+          - run quick budget
+          - run pivot table month-to-date
+            - review items over limit
+          - discuss upcoming expenses for the week/month
+          - review savings
+      - budget scenarios using 1/3 method
+      - budget in march with full student loan payments
+    - OOPlugin
+    - guitar lead sheets
+      - babe I'm gonna leave you
+      - babe will you follow me down
+      - don't make me a target
+    - condo utility closet
+    - dishwasher
+  - projects
+    - purge and organize file boxes
+    - arduino temp sensor logging to web server
+    - bookmarks site
+      - pinboard API
+      - Iphone website template
+      - 2 tier approach
+        - hosted site on synolgy
+          - Iphone and desktop versions. Auto detect platform with javascript?
+          - form to submit links to pinboard
+          - security? username/password
+        - version controlled html on gitbhub
+    - electronics "rack"
+      - networking gear
+        - router
+        - switches
+        - synology
+        - patch panel
+        - embedded sensors (temperature, etc)
+      - audio gear
+        - amps
+        - DAC
+        - guitar effects
+          - mounted pedals
+        - audio patch panel
+      - power
+        - surge protection
+        - power conditioner
+        - UPS
+        - switches
+      - lighting
+        - internal rope light
+      - front panel connections
+        - USB
+        - power
+          - power switches for
+            - m-audio monitors
+          - several full outlets
+        - audio
+          - headphone
+          - ONE IO
+          - guitar input
+        - network
+        - ONE knob
+      - features
+        - side cable rack
+        - side guitar hanger
+        - charging station on top
+        - imac 'harness'
+          - USB
+          - firewire
+          - network
+          - power
+          - audio
+      - how to mount non rack items
+    - DDWRT setup
+    - home/work - software/hardware matrix
+    - git
+      - helpfile
+      - distribution of config files to all systems such as .bashrc .vimrc
+    - GNU make
+    - Class d tiny guitar amp inside a pedal or cigar box
+      - could try parts express module for prototype
+      - old 24V laptop power supply would likely work
+    - digital guitar
+    - project spaces
+      - what are elements of a good project
+      - what standards can be used for:
+        - task tracking
+        - project  development history
+        - project data
+        - project documentation
+    - C the hard way
+    - ruby the hard way
+    - career planning
+      - resume
+      - linkedin
+      - references
+      - research jobs online
+    - itunes library flow
+      - auto add to library
+      - sync to synology
+      - auto convert flac
+    - books folder organizing
+    - make a song in reason/garageband
+    - condo shower
+      - call star tech plumbing
+    - wordpress site
+      - to do
+        - how to setup a new domain?
+        - get template input from courtney
+    - mazda maintenence
+      - glue mazda light #action
+      - mazda r134a #action
+    - condo blinds
+    - vimrc on github
+      - completed items
+        - uploaded latest vimrc to github
+      - next actions
+        - work on flow to download vimrc to linux, mac, and windows
+          - checkout or just download from github
+    - try bitbucket
+    - command line helpfile
+    - condo prep to sell
+      - call karen dwyer #action 
+    - SSD on imac
+    - information
+      - architecture, what goes where
+      - rules for sorting and finding information
+      - DRY - things need to be in only one place
+      - sync - data everywhere
+      - redundancy and backup - maintain uptime and versions
+    - .bashrc / .zshrc
+    - synology admin
+      - update SAB on synology #action 
+      - remove or update sick beard synology
+  - someday maybe projects
+    - interact with pinboard programitically
+      - small program to organize and view bookmarks
+    - camping trip
+    - courtney calendar sync
+    - europe future trip
+    - vim helpfile
+    - login to different systems via SSH keys
+    - beagleboard
+    - tremolo pedal
+    - slemmons amp
+    - vintage phone + iphone
+    - vintage phone + skype
+    - tube amp digital-ization
+    - journaling flow (vim + dropbox)
+    - rasberry pi tiny computer
+    - tiny USB headphone amp
+    - audio gear with embedded control
+      - USB or ethernet
+    - FPGA based effects pedal
+    - desktop DAC
+      - spdif in
+      - spdif passthru
+      - headphone out with volume
+      - line out with volume
+      - run headphones, line out, or both
+    - arduino home automation
+    - vim setup to emulate workflowy
+    - analog synth
+    - digital synth on FPGA
+    - monoblocs
+    - write python script to parse workflowy archive file
+    - monome
+    - Read courtneys dissertation
+    - legal documents
+    - frame diplomas
+    - artwork for walls
+    - recipe database
+    - frame great pictures
+    - family photos
+    - frame artwork from salvador
+    - Oven self clean
+  - learning topics
+    - python
+    - FPGA software stack
+    - FPGA logic design
+    - xcode
+    - C
+    - vim
+    - analog circuits
+    - arduino
+    - cooking
+    - make
+    - microcontrollers
+    - linux web servers
+    - embedded linux
+    - reason
+  - goals
+    - resume wishlist
+      - linux
+        - vim
+        - command line
+        - installing packages
+        - compiling code
+        - tool chains
+      - version control
+        - SVN
+        - git
+        - icmanage (perforce)
+      - programming (also list examples of code/projects)
+        - labview
+          - test vector tool
+          - I2C Register Map
+          - templates
+          - standard library
+        - matlab
+        - python
+        - verilog
+        - shell scripting
+        - C
+        - arduino
+        - xilinx tools
+      - operating systems
+      - networking
+      - circuits
+        - PCB design
+          - altium
+          - layout and schematic entry
+          - submission to manufacturing
+          - assembly
+        - analog design
+        - digital design
+          - FPGA design
+            - clock dividers
+            - PDM stereo modulator
+            - SPI interface
+            - general logic
+            - audio
+              - AX54
+            - FPGA mixed signal system emulation
+        - test system design
+      - gear
+        - DMM
+        - scopes
+        - network analyzers
+        - audio precision
+        - SMU
+        - PXI
+          - HSDIO
+            - stimulus and response
+          - FGEN
+          - SMU
+          - NI-SWITCH
+    - goals aug 2011
+      - tile condo bathrooms
+      - new master bath vanity
+      - build something electronic
+        - desktop DAC
+      - play guitar
+      - learn a programming language
+      - write a program
+      - build a website
+      - create a system for personal finance
+      - meditate
+      - ride a bike
+      - travel
+      - keep a daily journal
+      - be passionate about something
+      - cook amazing things
+    - A full life
+      - What would my ideal life be like?
+  - who I am
+    - programming manifesto
+      - keep things DRY (Do Not repeat Yourself)
+      - always document code, always make a README
+    - principles
+      - life
+        - courtney
+        - guitar
+        - engineering
+        - cooking
+        - yoga
+        - the awakening mind
+        - friends
+      - Get more done with rituals (automation)
+      - Perfect is the enemy of the good
+      - Quiet the busyness of the mind. Find your song. Sing your song. 
+      - Great people talk about ideas. 
+        - Average people talk about things. 
+          - Small people talk about other people.
+      - think for one hour every day
+      - do something hard and lonely 
+      - reduce fragmentation
+      - Simplicity is the ultimate sophistication
+      - Focus on the important stuff and forget about everything else
+    - routines
+      - Excercise
+      - Financial
+      - Cooking
+      - Guitar
+      - Cleaning
+      - Garden
+      - Computer
+    - Engineering
+      - Brian's essential tools
+        - workflowy
+        - 1password
+        - pinboard
+        - alfred
+        - vim
+        - chrome
+        - excel
+        - dropbox
+        - instapaper
+        - giganews/nzbmatrix
+        - virtualbox
+      - help files
+      - Programming
+        - Python
+        - xcode
+        - C
+      - unix
+        - vim
+        - shell
+        - ssh
+      - Circuits
+      - Audio
+      - FPGA
+      - MATLAB
+      - Arduino
+      - Git
+    - Body
+      - Yoga
+      - Running
+      - Biking
+      - Weights
+    - Mind
+    - Music
+    - friends
+      - chesterfield - cowden's band
+    - five regrets of the dying
+      -  I wish I'd had the courage to live a life true to myself, not the life others expected of me.
+      - I wish I didn't work so hard.
+      - I wish I'd had the courage to express my feelings.
+      - I wish I had stayed in touch with my friends.
+      - I wish that I had let myself be happier.
+  - fun things
+    - restaurants to try
+      - Chens noodle
+      - asia cafe
+      - pho place by wal mart
+      - fejuoda last saturday of the month at rios
+    - adventures
+      - Austin
+        - Restaurants
+        - Hiking
+          - emma long metropolitan park
+          - mckinney falls
+          - 
+        - Swimming
+          - Deep eddy
+          - Barton springs
+          - Hamilton pool
+        - Camping
+          - lost maples
+        - Austin
+      - US
+        - Outdoors
+          - Yosemite
+          - Yellowstone
+          - Sierra Nevada
+          - Rocky Mountains
+          - Beaches
+      - World
+  - archive
+    - wedding concert
+      - set list
+        - sound check and warm up
+          - aaron's song
+          - e minor thing
+          - hello goodbye
+          - karma police
+          - spanish thing
+          - die die die
+          - come with me tonight
+          - all blues
+          - god interlude
+          - freddie freeloader
+        - seating of guests - 30 min
+          - all of me
+          - paranoia in Bb major
+          - quiet nights of quiet stars
+          - all the things you are
+          - night and day (god interlude intro Fmb5 )
+          - summertime
+          - autumn leaves
+          - blackbird
+        - seating of family
+          - romance
+        - bridemaids enter
+          - canon in D
+        - bride
+          - wedding march
+        - ceremony 20 min
+        - recessional
+          - spring (four seasons)
+      - set list scratch
+        - night and day
+        - autumn leaves
+        - all the things you are
+        - all blues
+        - blackbird
+        - canon in D - bridesmaids
+        - wedding march - bride
+        - spring (four seasons) - recessional
+        - moon river
+        - somewhere over the rainbow
+        - Quie nights of quiet stars
+        - Gershwin
+        - paranoia in Bb
+      - maybe songs
+        - blue skies
+        - our love is here to stay
+        - all of me
+        - fly me to the moon
+        - blue bossa
+        - a beatles song
+    - new york trip
+      - wed
+        - jones beach
+          - $10
+        - clam bar
+          - $39
+        - detoni's
+          - $17.50
+      - thur
+        - dinner at Anthony's
+        - pick up jennifer
+      - fri
+        - Train $33
+        - dinner in brooklyn
+          - trains 
+            - 5:02 - 5:49
+            - 6:02 - 7:10
+            - 6:32 - 7:18
+            - 9:42
+            - 10:08
+            - 10:30
+            - 10:58
+      -  sat
+        - NJ
+        - riding with G&P & Jen. Depart before 10.
+        - Gas $31 cash
+      - sun
+        - Print vanguard tickets
+        - trains
+          - 9:21, 9:51, 10:22, 10:51
+        - museum of natural history
+        - shopping
+        - Book of mormon lottery
+        - village vanguard
+        - Expenses
+          - Train
+          - Noodle bar
+          - Milk bar
+          - H&M
+          - Waters
+          - Tapas
+          - Vanguard
+            - 28+5
+      - mon
+        - high line park
+        - gray's papaya
+          - 8th and 37th
+          - 6th ave and 8th st (near washington sq park)
+        - letterman
+        - expenses
+          - breakfast
+          - lunch (salad place)
+          - happy hour
+          - dinner
+      - tue
+        - flight
+        - expenses
+          - airport parking
+          - snacks
+      - activities
+        - coney island
+        - shopping
+        - night in city
+        - beach
+        - clam bar
+          - peter's clam bar
+        - run in eisenhower park
+        - momofoku noodle bar
+      - LIRR
+        - $8.25 per person one way to penn station or brooklyn
+      - to do
+        - fix pop's computer
+        - ipad
+          - tv shows
+            - netflix
+        - router setup
+          - port forwarding
+            - fix IP
+            - remote desktop port 3389
+          - password
+  - books
+    - autobiography of a yogi
+    - The information
+    - Mythical man month
+    - Ghost in the wires
+    - SICP
+    - Peoples history of the united states
+    - Hackers delight
+    - the C programming language
+    - Innovators dilemma
+      - Has maxim studied how customers are actually using our products
+        - Which codec features are most used?
+        - What are common customer workarounds?
+  - reference
+    - my measurements #rem 
+      - chest 39.5"
+      - waist 36" at belly
+      - neck 15"
+      - sleeve 33.5"
+    - ATT usage audit: data and SMS
+      - SMS
+        - 2011 (courtney, brian)
+          - Nov (76,51)
+          - Oct (419,349)
+          - Sept (279,303)
+          - Aug (993,626)
+          - July (424, 187)
+          - Jun (645,368)
+      - ATT only offers unlimited plans now, wtf?
+    - 'end' key on mac = fn+left arrow
+- tags
+  - maxim action item #aa 
+  - maxim #someday 
+  - maxim remember this #info
+  - Must do soon #urgent
+  - action item #action
+  - goals #goals
+  - fun thing to try #fun
+  - remember #rem
+  - fun thing to try #fun
+  - #plano 
+  - new tags to try
+    - @something
+
+
+Created with WorkFlowy.com
