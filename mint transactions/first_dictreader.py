@@ -1,6 +1,8 @@
 #import transactions.csv using dictreader and print out some stuff
-
+from sys import argv
 import csv
+
+script, query_name = argv
 
 # set filename and label names (should match header row of csv file)
 filename = 'transactions.csv'
@@ -20,10 +22,12 @@ reader = csv.DictReader(mintdata, labels)
 #for row in reader:
 #  print row
 
-query = [(item["date"], item["amount"], item["description"]) for item in reader if item["description"] == "AES"]
+#query_name = "Castle Hill Specialized Ftnss"
+query = [(item["date"], item["amount"], item["description"]) for item in reader if item["description"] == query_name]
 
 mintdata.close()
 
+print "Results for query of %s" % query_name
 print "\n".join(["%s\t%s\t%s" % (item) for item in query])
 
 
